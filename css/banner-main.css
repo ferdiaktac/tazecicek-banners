@@ -13,7 +13,7 @@
   --size-s: clamp(10px, 0.68vw, 10px);
   --size-m: clamp(12px, 0.81vw, 12px);
   --size-l: clamp(12px, 0.95vw, 14px);
-  --size-xl: clamp(11px, 1.08vw, 16px);
+  --size-xl: clamp(14px, 1.08vw, 16px);
   --size-1xl: clamp(13px, 1.22vw, 18px);
   --size-2xl: clamp(14px, 1.35vw, 20px);
   --size-3xl: clamp(17px, 1.62vw, 24px);
