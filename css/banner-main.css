@@ -6,7 +6,7 @@
   --bn-black: #292929;
   --bn-white: #ffffff;
 
-  --family-primary: "Mulish", sans-serif;
+  --family-primary: "Nunito", sans-serif;
 
   --size-xxs: clamp(4px, 0.27vw, 4px);
   --size-xs: clamp(8px, 0.54vw, 8px);
