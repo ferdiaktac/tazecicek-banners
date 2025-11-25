@@ -805,7 +805,7 @@
 }
 
 /* Buttons */
-.btn {
+.b-btn {
   position: absolute;
   bottom: 0;
   border: 0;
@@ -820,7 +820,7 @@
   transition: 0.3s ease;
 }
 
-.btn-small {
+.b-btn-small {
   position: absolute;
   bottom: 0;
   border: 0;
@@ -836,14 +836,14 @@
   max-height: 40px !important;
 }
 
-.btn:hover,
-.btn-small:hover {
+.b-btn:hover,
+.b-btn-small:hover {
   background: var(--bn-white);
   color: var(--brand);
   box-shadow: 0 4px 16px 0 rgba(0, 0, 0, 0.12);
 }
 
-.btn-white {
+.b-btn-white {
   position: absolute;
   bottom: 0;
   border: 0;
@@ -858,7 +858,7 @@
   transition: 0.3s ease;
 }
 
-.btn-white-small {
+.b-btn-white-small {
   position: absolute;
   bottom: 0;
   border: 0;
@@ -874,8 +874,8 @@
   max-height: 40px !important;
 }
 
-.btn-white:hover,
-.btn-white-small:hover {
+.b-btn-white:hover,
+.b-btn-white-small:hover {
   background: var(--brand);
   color: var(--bn-white);
   box-shadow: 0 4px 16px 0 rgba(0, 0, 0, 0.12);
@@ -909,6 +909,10 @@
   right: auto;
   margin: 0;
   transform: translateX(-50%);
+}
+
+b{
+  font-weight: 700!important;
 }
 
 @keyframes sliderFade {
@@ -978,7 +982,7 @@
     max-height: 205px;
   }
 
-  .btn-small {
+  .b-btn-small {
     padding: 10px 16px;
   }
 }
@@ -1026,7 +1030,7 @@
     display: block !important;
   }
 
-  .btn-small {
+  .b-btn-small {
     padding: 10px 16px;
   }
 
