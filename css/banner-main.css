@@ -714,7 +714,7 @@
   display: grid;
   gap: var(--size-xl);
   grid-template-columns: 2fr 1fr;
-  grid-auto-rows: minmax(317px, 1fr);
+  grid-auto-rows: minmax(317px, 1fr) !important;
 }
 .hero {
   grid-row: 1 / span 2;
@@ -990,7 +990,7 @@ b{
 @media (max-width: 500px) {
   .grid {
     grid-template-columns: 1fr;
-    grid-auto-rows: auto;
+    grid-auto-rows: auto!important;
   }
 
   .hero {
