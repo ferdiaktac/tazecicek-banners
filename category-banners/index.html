@@ -136,6 +136,11 @@
         cursor: grabbing;
       }
       @media (hover: hover) and (pointer: fine) {
+        .category-ticker:hover .ticker-wrapper {
+          -webkit-animation-play-state: paused;
+          animation-play-state: paused;
+        }
+
         .category-ticker .ticker-content:hover {
           background-color: var(--brand);
           color: var(--bn-white);
