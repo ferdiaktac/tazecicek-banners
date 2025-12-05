@@ -114,10 +114,6 @@
         -webkit-animation-iteration-count: infinite;
         animation-iteration-count: infinite;
       }
-      .ticker-wrapper:has(.ticker-content:hover) {
-        -webkit-animation-play-state: paused;
-        animation-play-state: paused;
-      }
       .category-ticker .ticker-content {
         display: flex;
         align-items: center;
@@ -139,14 +135,12 @@
       .category-ticker .ticker-content:active {
         cursor: grabbing;
       }
-      .category-ticker .ticker-content:hover {
-        background-color: var(--brand);
-        color: var(--bn-white);
-        transition: all 0.3s ease;
-      }
       @media (hover: hover) and (pointer: fine) {
         .category-ticker .ticker-content:hover {
+          background-color: var(--brand);
+          color: var(--bn-white);
           cursor: pointer;
+          transition: all 0.3s ease;
         }
       }
       .category-ticker .ticker-cat-img {
@@ -577,35 +571,6 @@
           if (!isDown) return;
           e.preventDefault();
           dragTo(e.pageX);
-        });
-
-        container.addEventListener(
-          "touchstart",
-          function (e) {
-            const touch = e.touches[0];
-            if (!touch) return;
-            startDrag(touch.pageX);
-          },
-          { passive: true }
-        );
-
-        container.addEventListener(
-          "touchmove",
-          function (e) {
-            if (!isDown) return;
-            const touch = e.touches[0];
-            if (!touch) return;
-            dragTo(touch.pageX);
-          },
-          { passive: true }
-        );
-
-        container.addEventListener("touchend", function () {
-          endDrag();
-        });
-
-        container.addEventListener("touchcancel", function () {
-          endDrag();
         });
       });
     </script>
