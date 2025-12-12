@@ -1,0 +1,879 @@
+<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Yılbaşı Kokina</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap"
+      rel="stylesheet" />
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="../css/banner-main.css" />
+    <link rel="stylesheet" href="../css/animate.min.css" />
+    <!-- Banner Custom CSS -->
+    <style>
+      /* Snowing */
+      .snowing {
+        position: absolute;
+        top: 0;
+        left: 8%;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        z-index: 9999;
+        filter: blur(0.8px);
+        overflow: hidden;
+      }
+
+      .snowing .small,
+      .snowing .medium {
+        position: absolute;
+        border-radius: 50%;
+        background: #fff;
+        animation-name: snow-fall, snow-shake;
+        animation-duration: 12s, 4s;
+        animation-timing-function: linear, ease-in-out;
+        animation-iteration-count: infinite, infinite;
+        top: -100%;
+      }
+
+      .snowing .small {
+        width: 3px;
+        height: 3px;
+      }
+
+      .snowing .medium {
+        width: 5px;
+        height: 5px;
+      }
+
+      .snowing .small:nth-child(1) {
+        left: 210px;
+        top: -40px;
+        animation-delay: 9s, 0.3s;
+      }
+      .snowing .small:nth-child(2) {
+        left: 400px;
+        top: -50px;
+        animation-delay: 6s, 0.3s;
+      }
+      .snowing .small:nth-child(3) {
+        left: 720px;
+        top: -130px;
+        animation-delay: 8s, 0.3s;
+      }
+      .snowing .small:nth-child(4) {
+        left: 140px;
+        animation-delay: 10s, 0.3s;
+      }
+      .snowing .small:nth-child(5) {
+        left: 500px;
+        animation-delay: 7s, 0.2s;
+      }
+      .snowing .small:nth-child(6) {
+        left: 150px;
+        top: -30px;
+        animation-delay: 5.2s, 0.3s;
+      }
+      .snowing .small:nth-child(7) {
+        left: 200px;
+        top: -20px;
+        animation-delay: 3.4s, 0.3s;
+      }
+      .snowing .small:nth-child(8) {
+        left: 70px;
+        top: -330px;
+        animation-delay: 6.6s, 0.3s;
+      }
+      .snowing .small:nth-child(9) {
+        left: 380px;
+        top: -90px;
+        animation-delay: 5.6s, 0.3s;
+      }
+      .snowing .small:nth-child(10) {
+        left: 130px;
+        animation-delay: 11s, 0.2s;
+      }
+      .snowing .small:nth-child(11) {
+        left: 20px;
+        animation-delay: 10.5s, 0.3s;
+      }
+      .snowing .small:nth-child(12) {
+        left: 620px;
+        top: -40px;
+        animation-delay: 8s, 0.3s;
+      }
+      .snowing .small:nth-child(13) {
+        left: 400px;
+        top: -180px;
+        animation-delay: 3.7s, 3s;
+      }
+      .snowing .small:nth-child(14) {
+        left: 500px;
+        top: -370px;
+        animation-delay: 6s, 0.3s;
+      }
+      .snowing .small:nth-child(15) {
+        left: 660px;
+        top: -20px;
+        animation-delay: 9s, 0.3s;
+      }
+      .snowing .small:nth-child(16) {
+        left: 610px;
+        top: -80px;
+        animation-delay: 7.3s, 0.3s;
+      }
+      .snowing .small:nth-child(17) {
+        left: 20px;
+        top: -210px;
+        animation-delay: 6.8s, 2s;
+      }
+      .snowing .small:nth-child(18) {
+        left: 670px;
+        top: -200px;
+        animation-delay: 6.5s, 0.6s;
+      }
+      .snowing .small:nth-child(19) {
+        left: 210px;
+        top: -120px;
+        animation-delay: 4s, 0.3s;
+      }
+      .snowing .small:nth-child(20) {
+        left: 20px;
+        top: -110px;
+        animation-delay: -1.1s, -0.1s;
+      }
+
+      /* Medium flakes positions */
+      .snowing .medium:nth-child(1) {
+        left: 300px;
+        top: -420px;
+        animation-delay: 3.4s, 1s;
+      }
+      .snowing .medium:nth-child(2) {
+        left: 530px;
+        animation-delay: 0.2s, 0.1s;
+      }
+      .snowing .medium:nth-child(3) {
+        left: 340px;
+        top: -110px;
+        animation-delay: 6s, 2s;
+      }
+      .snowing .medium:nth-child(4) {
+        left: 250px;
+        top: -390px;
+        animation-delay: 3.4s, 3s;
+      }
+      .snowing .medium:nth-child(5) {
+        left: 400px;
+        top: -150px;
+        animation-delay: 8.4s, 0.3s;
+      }
+      .snowing .medium:nth-child(6) {
+        left: 720px;
+        top: -240px;
+        animation-delay: 7.7s, 1s;
+      }
+      .snowing .medium:nth-child(7) {
+        left: 350px;
+        top: -180px;
+        animation-delay: 6s, 0.5s;
+      }
+      .snowing .medium:nth-child(8) {
+        left: 560px;
+        animation-delay: 1s, 0.5s;
+      }
+      .snowing .medium:nth-child(9) {
+        left: 10px;
+        top: -310px;
+        animation-delay: 8.2s, 0.5s;
+      }
+      .snowing .medium:nth-child(10) {
+        left: 40px;
+        top: -220px;
+        animation-delay: 3s, 1s;
+      }
+      .snowing .medium:nth-child(11) {
+        left: 220px;
+        top: -530px;
+        animation-delay: 0.6s, 3s;
+      }
+      .snowing .medium:nth-child(12) {
+        left: 630px;
+        top: -10px;
+        animation-delay: 9.4s, 2s;
+      }
+      .snowing .medium:nth-child(13) {
+        left: 420px;
+        top: -60px;
+        animation-delay: 8s, 3s;
+      }
+      .snowing .medium:nth-child(14) {
+        left: 580px;
+        animation-delay: 2s, 0.3s;
+      }
+      .snowing .medium:nth-child(15) {
+        left: 420px;
+        top: -180px;
+        animation-delay: 7s, 1s;
+      }
+      .snowing .medium:nth-child(16) {
+        left: 360px;
+        animation-delay: 8s, 0.3s;
+      }
+      .snowing .medium:nth-child(17) {
+        left: 90px;
+        top: -190px;
+        animation-delay: 4.5s, 1s;
+      }
+      .snowing .medium:nth-child(18) {
+        left: 130px;
+        top: -330px;
+        animation-delay: 8.2s, 1s;
+      }
+      .snowing .medium:nth-child(19) {
+        left: 150px;
+        top: -490px;
+        animation-delay: 6.5s, 0.1s;
+      }
+      .snowing .medium:nth-child(20) {
+        left: 640px;
+        top: -270px;
+        animation-delay: 10s, 1.5s;
+      }
+
+      @keyframes snow-fall {
+        0% {
+          top: -10%;
+        }
+        100% {
+          top: 100%;
+        }
+      }
+
+      @keyframes snow-shake {
+        0% {
+          transform: translateX(0px);
+        }
+        50% {
+          transform: translateX(60px);
+        }
+        100% {
+          transform: translateX(0px);
+        }
+      }
+      /* Flip Card */
+      .flip-card {
+        height: 90px;
+        width: 171px;
+        position: absolute;
+        margin: 0 auto;
+        right: 24px;
+        bottom: 24px;
+        cursor: pointer;
+        transition: 2s;
+        -webkit-perspective: 1200px;
+        perspective: 1200px;
+        z-index: 888;
+      }
+      .flip-card:hover {
+        transform: rotate(-5deg);
+        overflow: visible;
+      }
+      .flip-card:hover .outside {
+        transform: rotateY(-130deg);
+      }
+      .outside {
+        height: 100%;
+        width: 50%;
+        position: absolute;
+        left: 50.1%;
+        -webkit-transform-style: preserve-3d;
+        transform-style: preserve-3d;
+        transition: 2s;
+        transform-origin: left;
+        border-radius: 12px;
+        overflow: hidden;
+      }
+      .front,
+      .back {
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        backface-visibility: hidden;
+        -webkit-backface-visibility: hidden;
+        transform: rotateX(0deg);
+      }
+      .front {
+        background-color: #c54441;
+        z-index: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .back {
+        background: linear-gradient(to right, #c54441 50%, #8d2726);
+        transform: rotateY(180deg);
+      }
+      .inside {
+        height: 100%;
+        width: 50%;
+        position: absolute;
+        left: 50%;
+        background: linear-gradient(to left, #c54441 50%, #8d2726);
+        box-shadow: 25px 25px 35px rgba(0, 0, 0, 0.3);
+        border-radius: 12px;
+        overflow: hidden;
+      }
+      .inside > p {
+        font-family: "Parisienne", cursive;
+        color: white !important;
+        font-size: 16px;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+      }
+      .flip-card-icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      @media (max-width: 768px) {
+        .flip-card {
+          display: none;
+        }
+      }
+    </style>
+  </head>
+
+  <body style="margin: 10px">
+    <main class="container" style="max-width: 1480px; margin: auto">
+      <section class="grid">
+        <!-- Hero -->
+        <article
+          class="hero p-36"
+          style="
+            background: linear-gradient(
+              114deg,
+              #ffacaa 0%,
+              #df7370 25%,
+              #c54441 50%,
+              #df7370 75%,
+              #ffacaa 100%
+            );
+          ">
+          <!-- Snowing -->
+          <div class="snowing">
+            <div class="small-snow">
+              <div class="small"></div>
+              <div class="small"></div>
+              <div class="small"></div>
+              <div class="small"></div>
+              <div class="small"></div>
+              <div class="small"></div>
+              <div class="small"></div>
+              <div class="small"></div>
+              <div class="small"></div>
+              <div class="small"></div>
+              <div class="small"></div>
+              <div class="small"></div>
+              <div class="small"></div>
+              <div class="small"></div>
+              <div class="small"></div>
+              <div class="small"></div>
+              <div class="small"></div>
+              <div class="small"></div>
+              <div class="small"></div>
+              <div class="small"></div>
+            </div>
+            <div class="medium-snow">
+              <div class="medium"></div>
+              <div class="medium"></div>
+              <div class="medium"></div>
+              <div class="medium"></div>
+              <div class="medium"></div>
+              <div class="medium"></div>
+              <div class="medium"></div>
+              <div class="medium"></div>
+              <div class="medium"></div>
+              <div class="medium"></div>
+              <div class="medium"></div>
+              <div class="medium"></div>
+              <div class="medium"></div>
+              <div class="medium"></div>
+              <div class="medium"></div>
+              <div class="medium"></div>
+              <div class="medium"></div>
+              <div class="medium"></div>
+              <div class="medium"></div>
+              <div class="medium"></div>
+            </div>
+          </div>
+          <!-- Flip Card -->
+          <div class="flip-card">
+            <div class="inside">
+              <p>Mutlu<br />Yıllar</p>
+            </div>
+            <div class="outside">
+              <div class="front">
+                <div class="flip-card-icon">
+                  <img
+                    src="images/logo-icon.svg"
+                    style="height: 32px; opacity: 0.8" />
+                </div>
+              </div>
+              <div class="back"></div>
+            </div>
+          </div>
+          <a class="banner-link" href="#">
+            <div
+              class="content content-center text-center"
+              style="justify-content: space-between">
+              <div class="row">
+                <h3
+                  class="text-36 font-bold content-white animate__animated animate__fadeInDown animate__faster">
+                  Büyük Yılbaşı İndirimleri!
+                  <p class="text-16 content-white font-regular pt-12">
+                    1000 TL ve üzeri 150 TL taptaze Yılbaşı Hediyen Hazır!
+                  </p>
+                </h3>
+                <div
+                  class="discount mt-12 animate__animated animate__fadeInDown animate__faster animate-delay-03s">
+                  <span
+                    class="label content-white"
+                    style="background-color: inherit !important"
+                    >İndirim Kodu</span
+                  >
+                  <span
+                    class="code"
+                    id="copyCode"
+                    style="
+                      border-top-right-radius: 4px;
+                      border-bottom-right-radius: 4px;
+                    "
+                    >Yilbasi150</span
+                  >
+                </div>
+              </div>
+
+              <div
+                class="b-btn animate__animated animate__fadeInUp animate__faster animate-delay-03s"
+                style="position: relative">
+                ALIŞVERİŞE BAŞLA
+              </div>
+            </div>
+          </a>
+          <img
+            class="figure animate__animated animate__slideInUp animate__faster"
+            src="images/logo-icon.svg"
+            style="
+              width: clamp(420px, calc(100vw * 558 / 1200), 558px);
+              bottom: -75px;
+              opacity: 0.1 !important;
+            " />
+          <img
+            class="figure gif"
+            src="images/slider-1-1.png"
+            style="
+              height: clamp(420px, calc(100vw * 480 / 1200), 480px);
+              --i: 0;
+              animation-delay: 0s !important;
+            " />
+          <img
+            class="figure gif"
+            src="images/slider-1-2.png"
+            style="
+              height: clamp(420px, calc(100vw * 480 / 1200), 480px);
+              --i: 1;
+            " />
+          <img
+            class="figure gif"
+            src="images/slider-1-3.png"
+            style="
+              height: clamp(420px, calc(100vw * 480 / 1200), 480px);
+              --i: 2;
+            " />
+          <img
+            class="figure gif"
+            src="images/slider-1-3.png"
+            style="
+              height: clamp(420px, calc(100vw * 480 / 1200), 480px);
+              --i: 3;
+            " />
+        </article>
+
+        <!-- Right Top -->
+        <article
+          class="grid-1 animate__animated animate__fadeInRight animate__faster animate-disable-mobile p-24"
+          style="background-color: #d9f1ec">
+          <!-- Snowing -->
+          <div class="snowing">
+            <div class="small-snow">
+              <div class="small"></div>
+              <div class="small"></div>
+              <div class="small"></div>
+              <div class="small"></div>
+              <div class="small"></div>
+              <div class="small"></div>
+              <div class="small"></div>
+              <div class="small"></div>
+              <div class="small"></div>
+              <div class="small"></div>
+              <div class="small"></div>
+              <div class="small"></div>
+              <div class="small"></div>
+              <div class="small"></div>
+              <div class="small"></div>
+              <div class="small"></div>
+              <div class="small"></div>
+              <div class="small"></div>
+              <div class="small"></div>
+              <div class="small"></div>
+            </div>
+            <div class="medium-snow">
+              <div class="medium"></div>
+              <div class="medium"></div>
+              <div class="medium"></div>
+              <div class="medium"></div>
+              <div class="medium"></div>
+              <div class="medium"></div>
+              <div class="medium"></div>
+              <div class="medium"></div>
+              <div class="medium"></div>
+              <div class="medium"></div>
+              <div class="medium"></div>
+              <div class="medium"></div>
+              <div class="medium"></div>
+              <div class="medium"></div>
+              <div class="medium"></div>
+              <div class="medium"></div>
+              <div class="medium"></div>
+              <div class="medium"></div>
+              <div class="medium"></div>
+              <div class="medium"></div>
+            </div>
+          </div>
+          <a class="banner-link" href="#">
+            <div class="content content-left text-left">
+              <h3
+                class="text-30 font-bold lh-110 animate__animated animate__fadeInDown animate__faster"
+                style="color: #004239 !important">
+                <span class="font-regular text-20 content-black"
+                  >Yeni<br /></span
+                >Yılbaşı<br />Koleksiyonu
+              </h3>
+              <div
+                class="b-btn-small animate__animated animate__fadeInUp animate__faster animate-delay-03s">
+                HEMEN İNCELE
+              </div>
+            </div>
+          </a>
+          <img
+            class="figure animate__animated animate__rotateInDownRight animate__faster"
+            src="images/wing.svg"
+            style="
+              height: clamp(420px, calc(100vw * 558 / 1200), 558px);
+              top: 20px;
+              left: inherit;
+              right: -30px;
+              margin-right: 0;
+            " />
+          <img
+            class="figure animate__animated animate__fadeInRight animate__faster animate-delay-03s"
+            src="images/grid-1-1.png"
+            style="
+              height: clamp(210px, calc(100vw * 317 / 1200), 317px);
+              left: inherit;
+              margin-right: 0;
+            " />
+          <img
+            class="figure animate__animated animate__fadeInUp animate__faster animate-delay-05s"
+            src="images/grid-1-2.png"
+            style="
+              height: clamp(149px, calc(100vw * 158 / 1200), 158px);
+              right: 50px;
+              bottom: 20px;
+            " />
+        </article>
+
+        <!-- Right Bottom -->
+        <article
+          class="grid-2 animate__animated animate__fadeInRight animate__faster animate-delay-02s animate-disable-mobile p-24"
+          style="background-color: #d9f1ec !important">
+          <!-- Snowing -->
+          <div class="snowing">
+            <div class="small-snow">
+              <div class="small"></div>
+              <div class="small"></div>
+              <div class="small"></div>
+              <div class="small"></div>
+              <div class="small"></div>
+              <div class="small"></div>
+              <div class="small"></div>
+              <div class="small"></div>
+              <div class="small"></div>
+              <div class="small"></div>
+              <div class="small"></div>
+              <div class="small"></div>
+              <div class="small"></div>
+              <div class="small"></div>
+              <div class="small"></div>
+              <div class="small"></div>
+              <div class="small"></div>
+              <div class="small"></div>
+              <div class="small"></div>
+              <div class="small"></div>
+            </div>
+            <div class="medium-snow">
+              <div class="medium"></div>
+              <div class="medium"></div>
+              <div class="medium"></div>
+              <div class="medium"></div>
+              <div class="medium"></div>
+              <div class="medium"></div>
+              <div class="medium"></div>
+              <div class="medium"></div>
+              <div class="medium"></div>
+              <div class="medium"></div>
+              <div class="medium"></div>
+              <div class="medium"></div>
+              <div class="medium"></div>
+              <div class="medium"></div>
+              <div class="medium"></div>
+              <div class="medium"></div>
+              <div class="medium"></div>
+              <div class="medium"></div>
+              <div class="medium"></div>
+              <div class="medium"></div>
+            </div>
+          </div>
+          <a class="banner-link" href="#">
+            <div class="content content-left text-left">
+              <h3
+                class="text-30 font-bold lh-110 animate__animated animate__fadeInDown animate__faster"
+                style="color: #004239 !important">
+                <span class="font-regular text-20 content-black"
+                  >Çok Satan<br /></span
+                >Yılbaşı<br />Orkideleri
+              </h3>
+              <div
+                class="b-btn-small animate__animated animate__fadeInUp animate__faster animate-delay-03s">
+                HEMEN İNCELE
+              </div>
+            </div>
+          </a>
+          <img
+            class="figure animate__animated animate__rotateInDownRight animate__faster"
+            src="images/wing.svg"
+            style="
+              height: clamp(420px, calc(100vw * 558 / 1200), 558px);
+              top: 20px;
+              left: inherit;
+              right: -30px;
+              margin-right: 0;
+            " />
+          <img
+            class="figure animate__animated animate__fadeInRight animate__faster animate-delay-03s"
+            src="images/grid-2-1.png"
+            style="
+              height: clamp(210px, calc(100vw * 317 / 1200), 317px);
+              left: inherit;
+              margin-right: 0;
+            " />
+          <img
+            class="figure animate__animated animate__fadeInUp animate__faster animate-delay-05s"
+            src="images/grid-2-2.png"
+            style="
+              height: clamp(145px, calc(100vw * 169 / 1200), 169px);
+              right: 80px;
+              bottom: 20px;
+            " />
+        </article>
+
+        <!-- Small Banners -->
+        <div class="small-banners">
+          <!-- Small 1 -->
+          <article
+            class="banner animate__animated animate__fadeInUp animate__faster animate-delay-01s animate-disable-mobile p-24"
+            style="background-color: #ffe3e2 !important">
+            <a class="banner-link" href="#">
+              <div class="content">
+                <h3
+                  class="text-24 font-bold lh-110 animate__animated animate__fadeInDown animate__faster"
+                  style="color: #b7221e !important">
+                  <span class="font-regular text-20 content-black"
+                    >Tüm Türkiye<br /></span
+                  >Kargolu Çiçekler
+                </h3>
+                <div
+                  class="b-btn-white-small animate__animated animate__fadeInUp animate__faster animate-delay-03s">
+                  HEMEN İNCELE
+                </div>
+              </div>
+            </a>
+            <img
+              class="figure animate__animated animate__slideInUp animate__faster"
+              src="images/small-shape-1.svg"
+              style="width: 100%; bottom: 0" />
+            <img
+              class="figure animate__animated animate__fadeInRight animate__faster animate-delay-02s"
+              src="images/small-1.png"
+              style="
+                margin-right: 0;
+                height: clamp(130px, calc(100vw * 205 / 1200), 205px);
+              " />
+          </article>
+
+          <!-- Small 2 -->
+          <article
+            class="banner animate__animated animate__fadeInUp animate__faster animate-delay-02s animate-disable-mobile p-24"
+            style="background-color: #ffe3e2 !important">
+            <a class="banner-link" href="#">
+              <div class="content">
+                <h3
+                  class="text-24 font-bold lh-110 animate__animated animate__fadeInDown animate__faster"
+                  style="color: #b7221e !important">
+                  <span class="font-regular text-20 content-black"
+                    >2025<br /></span
+                  >Yeni Tasarımlar
+                </h3>
+                <div
+                  class="b-btn-white-small animate__animated animate__fadeInUp animate__faster animate-delay-03s">
+                  HEMEN İNCELE
+                </div>
+              </div>
+            </a>
+            <img
+              class="figure animate__animated animate__slideInUp animate__faster"
+              src="images/small-shape-2.svg"
+              style="width: 100%; bottom: 0" />
+            <img
+              class="figure animate__animated animate__fadeInRight animate__faster animate-delay-02s"
+              src="images/small-2.png"
+              style="
+                margin-right: 0;
+                height: clamp(130px, calc(100vw * 205 / 1200), 205px);
+              " />
+          </article>
+
+          <!-- Small 3 -->
+          <article
+            class="banner animate__animated animate__fadeInUp animate__faster animate-delay-03s animate-disable-mobile p-24"
+            style="background-color: #ffe3e2 !important">
+            <a class="banner-link" href="#">
+              <div class="content">
+                <h3
+                  class="text-24 font-bold lh-110 animate__animated animate__fadeInDown animate__faster"
+                  style="color: #b7221e !important">
+                  <span class="font-regular text-20 content-black"
+                    >Taptaze<br /></span
+                  >Premium Aranjmanlar
+                </h3>
+                <div
+                  class="b-btn-white-small animate__animated animate__fadeInUp animate__faster animate-delay-03s">
+                  HEMEN İNCELE
+                </div>
+              </div>
+            </a>
+            <img
+              class="figure animate__animated animate__slideInUp animate__faster"
+              src="images/small-shape-3.svg"
+              style="width: 100%; bottom: 0" />
+            <img
+              class="figure animate__animated animate__fadeInRight animate__faster animate-delay-02s"
+              src="images/small-3.png"
+              style="
+                margin-right: 0;
+                height: clamp(130px, calc(100vw * 205 / 1200), 205px);
+              " />
+          </article>
+        </div>
+      </section>
+    </main>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const codeEl = document.getElementById("copyCode");
+        if (!codeEl) return;
+
+        // Value
+        const codeValue = "Yilbasi150";
+
+        // Utulities
+        codeEl.style.whiteSpace = "nowrap";
+        codeEl.style.display = "inline-block";
+        codeEl.style.overflow = "visible";
+
+        // Tooltip
+        const tooltip = document.createElement("div");
+        tooltip.textContent = "Kopyala";
+        tooltip.style.position = "absolute";
+        tooltip.style.left = "50%";
+        tooltip.style.top = "100%";
+        tooltip.style.transform = "translate(-50%, 6px)";
+        tooltip.style.padding = "8px 12px";
+        tooltip.style.fontSize = "12px";
+        tooltip.style.lineHeight = "1";
+        tooltip.style.backgroundColor = "#292929";
+        tooltip.style.color = "#ffffff";
+        tooltip.style.borderRadius = "8px";
+        tooltip.style.whiteSpace = "nowrap";
+        tooltip.style.boxShadow = "0 2px 4px rgba(0,0,0,.15)";
+        tooltip.style.opacity = "0";
+        tooltip.style.pointerEvents = "none";
+        tooltip.style.transition = "opacity .15s ease-out";
+        tooltip.style.zIndex = "10";
+
+        codeEl.style.position = "relative";
+        codeEl.appendChild(tooltip);
+
+        codeEl.addEventListener("mouseenter", () => {
+          tooltip.style.opacity = "1";
+          document.querySelector(".discount").style.overflow = "visible";
+        });
+
+        codeEl.addEventListener("mouseleave", () => {
+          tooltip.style.opacity = "0";
+          document.querySelector(".discount").style.overflow = "hidden";
+        });
+
+        codeEl.addEventListener("click", (event) => {
+          event.stopPropagation();
+          event.preventDefault();
+          // Copy to clipbord
+          if (navigator.clipboard && navigator.clipboard.writeText) {
+            navigator.clipboard.writeText(codeValue).catch(() => {});
+          }
+
+          const originalText = codeValue;
+          const originalBg = codeEl.style.backgroundColor;
+          const originalColor = codeEl.style.color;
+          const originalBorderColor = codeEl.style.color;
+
+          // Copied
+          if (codeEl.firstChild) codeEl.firstChild.nodeValue = "Kopyalandı";
+          codeEl.style.backgroundColor = "#B7FFD6";
+          codeEl.style.borderColor = "#B7FFD6";
+          codeEl.style.color = "#168F4A";
+
+          // Text Update
+          codeEl.setAttribute("title", "Kopyalandı");
+          tooltip.textContent = "Kopyalandı";
+
+          // Delay
+          setTimeout(() => {
+            if (codeEl.firstChild) codeEl.firstChild.nodeValue = originalText;
+            codeEl.style.backgroundColor = originalBg;
+            codeEl.style.borderColor = originalBorderColor;
+            codeEl.style.color = originalColor;
+            codeEl.setAttribute("title", "Kopyala");
+            tooltip.textContent = "Kopyala";
+          }, 1500);
+        });
+      });
+    </script>
+  </body>
+</html>
