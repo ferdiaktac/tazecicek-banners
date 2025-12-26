@@ -62,15 +62,14 @@
 
         <!-- Right Top -->
         <article
-          class="grid-1 animate__animated animate__fadeInRight animate__faster animate-disable-mobile p-24"
-          style="background-color: #f5eeec"
+          class="grid-1 animate__animated animate__fadeInRight animate__faster animate-disable-mobile p-24 surface-cream-light"
         >
           <a class="banner-link" href="#">
             <div class="content content-left text-left">
               <h3
                 class="text-30 font-bold lh-110 animate__animated animate__fadeInDown animate__faster"
               >
-                <span class="font-regular">2025<br /></span>En Çok Satanları
+                Taptaze<br />Buketler
               </h3>
               <div
                 class="b-btn-small animate__animated animate__fadeInUp animate__faster animate-delay-03s"
@@ -103,15 +102,14 @@
 
         <!-- Right Bottom -->
         <article
-          class="grid-2 animate__animated animate__fadeInRight animate__faster animate-delay-02s animate-disable-mobile p-24"
-          style="background-color: #f5eeec"
+          class="grid-2 animate__animated animate__fadeInRight animate__faster animate-delay-02s animate-disable-mobile p-24 surface-cream-light"
         >
           <a class="banner-link" href="#">
             <div class="content content-left text-left">
               <h3
                 class="text-30 font-bold lh-110 animate__animated animate__fadeInDown animate__faster"
               >
-                <span class="font-regular">2025<br /></span>En Çok<br />Favorilenenler
+                Çok Satan<br />Çiçekler
               </h3>
               <div
                 class="b-btn-small animate__animated animate__fadeInUp animate__faster animate-delay-03s"
@@ -257,86 +255,5 @@
         </div>
       </section>
     </main>
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        const codeEl = document.getElementById("copyCode");
-        if (!codeEl) return;
-
-        // Value
-        const codeValue = "kokina100";
-
-        // Utulities
-        codeEl.style.whiteSpace = "nowrap";
-        codeEl.style.display = "inline-block";
-        codeEl.style.overflow = "visible";
-
-        // Tooltip
-        const tooltip = document.createElement("div");
-        tooltip.textContent = "Kopyala";
-        tooltip.style.position = "absolute";
-        tooltip.style.left = "50%";
-        tooltip.style.top = "100%";
-        tooltip.style.transform = "translate(-50%, 6px)";
-        tooltip.style.padding = "8px 12px";
-        tooltip.style.fontSize = "12px";
-        tooltip.style.lineHeight = "1";
-        tooltip.style.backgroundColor = "#292929";
-        tooltip.style.color = "#ffffff";
-        tooltip.style.borderRadius = "8px";
-        tooltip.style.whiteSpace = "nowrap";
-        tooltip.style.boxShadow = "0 2px 4px rgba(0,0,0,.15)";
-        tooltip.style.opacity = "0";
-        tooltip.style.pointerEvents = "none";
-        tooltip.style.transition = "opacity .15s ease-out";
-        tooltip.style.zIndex = "10";
-
-        codeEl.style.position = "relative";
-        codeEl.appendChild(tooltip);
-
-        codeEl.addEventListener("mouseenter", () => {
-          tooltip.style.opacity = "1";
-          document.querySelector(".discount").style.overflow = "visible";
-        });
-
-        codeEl.addEventListener("mouseleave", () => {
-          tooltip.style.opacity = "0";
-          document.querySelector(".discount").style.overflow = "hidden";
-        });
-
-        codeEl.addEventListener("click", (event) => {
-          event.stopPropagation();
-          event.preventDefault();
-          // Copy to clipbord
-          if (navigator.clipboard && navigator.clipboard.writeText) {
-            navigator.clipboard.writeText(codeValue).catch(() => {});
-          }
-
-          const originalText = codeValue;
-          const originalBg = codeEl.style.backgroundColor;
-          const originalColor = codeEl.style.color;
-          const originalBorderColor = codeEl.style.color;
-
-          // Copied
-          if (codeEl.firstChild) codeEl.firstChild.nodeValue = "Kopyalandı";
-          codeEl.style.backgroundColor = "#B7FFD6";
-          codeEl.style.borderColor = "#B7FFD6";
-          codeEl.style.color = "#168F4A";
-
-          // Text Update
-          codeEl.setAttribute("title", "Kopyalandı");
-          tooltip.textContent = "Kopyalandı";
-
-          // Delay
-          setTimeout(() => {
-            if (codeEl.firstChild) codeEl.firstChild.nodeValue = originalText;
-            codeEl.style.backgroundColor = originalBg;
-            codeEl.style.borderColor = originalBorderColor;
-            codeEl.style.color = originalColor;
-            codeEl.setAttribute("title", "Kopyala");
-            tooltip.textContent = "Kopyala";
-          }, 1500);
-        });
-      });
-    </script>
   </body>
 </html>
