@@ -1,0 +1,385 @@
+<!doctype html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Sevgililer Günü</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap"
+      rel="stylesheet"
+    />
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="../css/banner-main.css" />
+    <link rel="stylesheet" href="../css/animate.min.css" />
+    <!-- Banner Custom CSS -->
+    <style>
+      /* Flying Hearts Animation */
+      .b-btn,
+      .b-btn-small {
+        overflow: visible !important;
+        z-index: 10;
+      }
+
+      .b-btn::before,
+      .b-btn::after,
+      .b-btn-small::before,
+      .b-btn-small::after {
+        content: "♥";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: transparent;
+        font-size: 16px;
+        pointer-events: none;
+        transition: all 0.3s;
+        opacity: 0;
+        z-index: -1;
+      }
+
+      .b-btn:hover::before,
+      .b-btn-small:hover::before {
+        animation: hearts-fly-1 1.2s ease-out infinite;
+      }
+
+      .b-btn:hover::after,
+      .b-btn-small:hover::after {
+        animation: hearts-fly-2 1.2s ease-out 0.2s infinite;
+      }
+
+      @keyframes hearts-fly-1 {
+        0% {
+          opacity: 0;
+          transform: translate(-50%, -50%) scale(0.5);
+          text-shadow:
+            0 0 0 #da485b,
+            0 0 0 #da485b,
+            0 0 0 #da485b;
+        }
+        20% {
+          opacity: 1;
+          transform: translate(-50%, -50%) scale(1);
+          text-shadow:
+            0 0 0 #da485b,
+            0 0 0 #da485b,
+            0 0 0 #da485b;
+        }
+        100% {
+          opacity: 0;
+          transform: translate(-50%, -50%) scale(1.5);
+          text-shadow:
+            -30px -50px 0 #da485b,
+            30px -40px 0 #da485b,
+            -10px -70px 0 #da485b;
+        }
+      }
+
+      @keyframes hearts-fly-2 {
+        0% {
+          opacity: 0;
+          transform: translate(-50%, -50%) scale(0.5);
+          text-shadow:
+            0 0 0 #da485b,
+            0 0 0 #da485b;
+        }
+        20% {
+          opacity: 1;
+          transform: translate(-50%, -50%) scale(1);
+          text-shadow:
+            0 0 0 #da485b,
+            0 0 0 #da485b;
+        }
+        100% {
+          opacity: 0;
+          transform: translate(-50%, -50%) scale(1.5);
+          text-shadow:
+            20px -60px 0 #da485b,
+            -20px -30px 0 #da485b;
+        }
+      }
+
+      @media (max-width: 500px) {
+        .heart-main {
+          left: 50% !important;
+          translate: -50% 0 !important;
+        }
+      }
+    </style>
+  </head>
+
+  <body style="margin: 10px">
+    <main class="container" style="max-width: 1480px; margin: auto">
+      <section class="grid">
+        <!-- Hero -->
+        <article class="hero p-36" style="background-color: #fddde8">
+          <a class="banner-link" href="#">
+            <div
+              class="content content-center text-center"
+              style="justify-content: space-between"
+            >
+              <div class="row">
+                <h3
+                  class="text-36 font-bold animate__animated animate__fadeInDown animate__faster"
+                  style="color: #da485b"
+                >
+                  Aşk Bu Yıl Taze Çiçek’te
+                  <p class="text-16 content-black font-regular pt-12">
+                    En taze çiçekler, doğru zamanda, doğru adreste.
+                  </p>
+                </h3>
+              </div>
+
+              <div
+                class="b-btn animate__animated animate__fadeInUp animate__faster animate-delay-03s"
+                style="position: relative"
+              >
+                ALIŞVERİŞE BAŞLA
+              </div>
+            </div>
+          </a>
+          <img
+            class="figure heart-main animate__animated animate__pulse animate__slow animate__repeat-2"
+            src="images_sevgililer_gunu/heart.webp"
+            style="
+              width: clamp(452px, calc(100vw * 652 / 1200), 652px);
+              bottom: clamp(-152px, calc(100vw * -152 / 1200), -8px);
+            "
+          />
+          <img
+            class="figure animate__animated animate__slideInUp animate__faster animate-delay-03s"
+            src="images_sevgililer_gunu/slider-1-1.webp"
+            style="height: clamp(372px, calc(100vw * 480 / 1200), 480px)"
+          />
+        </article>
+
+        <!-- Right Top -->
+        <article
+          class="grid-1 animate__animated animate__fadeInRight animate__faster animate-disable-mobile p-24"
+          style="background-color: #fddde8"
+        >
+          <a class="banner-link" href="#">
+            <div class="content content-left text-left">
+              <h3
+                class="text-30 font-bold lh-110 animate__animated animate__fadeInDown animate__faster"
+                style="color: #da485b !important"
+              >
+                <span class="font-regular text-20 content-black"
+                  >2026<br /></span
+                >Çok Satanlar
+              </h3>
+              <div
+                class="b-btn-small animate__animated animate__fadeInUp animate__faster animate-delay-03s"
+              >
+                HEMEN İNCELE
+              </div>
+            </div>
+          </a>
+          <img
+            class="figure animate__animated animate__rotateInDownRight animate__faster"
+            src="images_sevgililer_gunu/heart.webp"
+            style="
+              height: clamp(220px, calc(100vw * 316 / 1200), 316px);
+              bottom: 0;
+              left: inherit;
+              right: -52px;
+              margin-right: 0;
+            "
+          />
+          <img
+            class="figure animate__animated animate__fadeInRight animate__faster animate-delay-03s"
+            src="images_sevgililer_gunu/grid-1-1.webp"
+            style="
+              height: clamp(210px, calc(100vw * 317 / 1200), 317px);
+              left: inherit;
+              margin-right: 0;
+            "
+          />
+          <img
+            class="figure animate__animated animate__fadeInUp animate__faster animate-delay-05s"
+            src="images_sevgililer_gunu/grid-1-2.webp"
+            style="
+              height: clamp(149px, calc(100vw * 162 / 1200), 162px);
+              right: 50px;
+              bottom: 20px;
+            "
+          />
+        </article>
+
+        <!-- Right Bottom -->
+        <article
+          class="grid-2 animate__animated animate__fadeInRight animate__faster animate-delay-02s animate-disable-mobile p-24"
+          style="background-color: #fddde8 !important"
+        >
+          <a class="banner-link" href="#">
+            <div class="content content-left text-left">
+              <h3
+                class="text-30 font-bold lh-110 animate__animated animate__fadeInDown animate__faster"
+                style="color: #da485b !important"
+              >
+                <span class="font-regular text-20 content-black"
+                  >En Çok<br /></span
+                >Favorilenenler
+              </h3>
+              <div
+                class="b-btn-small animate__animated animate__fadeInUp animate__faster animate-delay-03s"
+              >
+                HEMEN İNCELE
+              </div>
+            </div>
+          </a>
+          <img
+            class="figure animate__animated animate__rotateInDownRight animate__faster"
+            src="images_sevgililer_gunu/heart.webp"
+            style="
+              height: clamp(220px, calc(100vw * 316 / 1200), 316px);
+              bottom: 0;
+              left: inherit;
+              right: -52px;
+              margin-right: 0;
+            "
+          />
+          <img
+            class="figure animate__animated animate__fadeInRight animate__faster animate-delay-03s"
+            src="images_sevgililer_gunu/grid-2-1.webp"
+            style="
+              height: clamp(210px, calc(100vw * 317 / 1200), 317px);
+              left: inherit;
+              margin-right: 0;
+            "
+          />
+          <img
+            class="figure animate__animated animate__fadeInUp animate__faster animate-delay-05s"
+            src="images_sevgililer_gunu/grid-2-2.webp"
+            style="
+              height: clamp(145px, calc(100vw * 169 / 1200), 169px);
+              right: 80px;
+              bottom: 20px;
+            "
+          />
+        </article>
+
+        <!-- Small Banners -->
+        <div class="small-banners">
+          <!-- Small 1 -->
+          <article
+            class="banner animate__animated animate__fadeInUp animate__faster animate-delay-01s animate-disable-mobile p-24"
+            style="background-color: #fddde8 !important"
+          >
+            <a class="banner-link" href="#">
+              <div class="content">
+                <h3
+                  class="text-24 font-bold content-black lh-110 animate__animated animate__fadeInDown animate__faster"
+                >
+                  <span class="font-regular text-20 content-black"
+                    >Tüm Türkiye<br /></span
+                  >Kargolu Çiçekler
+                </h3>
+                <div
+                  class="b-btn-small animate__animated animate__fadeInUp animate__faster animate-delay-03s"
+                >
+                  HEMEN İNCELE
+                </div>
+              </div>
+            </a>
+            <img
+              class="figure animate__animated animate__slideInUp animate__faster"
+              src="images_sevgililer_gunu/heart-small.webp"
+              style="
+                margin-right: 0;
+                height: clamp(130px, calc(100vw * 205 / 1200), 205px);
+              "
+            />
+            <img
+              class="figure animate__animated animate__fadeInRight animate__faster animate-delay-02s"
+              src="images_sevgililer_gunu/small-1.webp"
+              style="
+                margin-right: 0;
+                height: clamp(130px, calc(100vw * 205 / 1200), 205px);
+              "
+            />
+          </article>
+
+          <!-- Small 2 -->
+          <article
+            class="banner animate__animated animate__fadeInUp animate__faster animate-delay-02s animate-disable-mobile p-24"
+            style="background-color: #fddde8 !important"
+          >
+            <a class="banner-link" href="#">
+              <div class="content">
+                <h3
+                  class="text-24 font-bold content-black lh-110 animate__animated animate__fadeInDown animate__faster"
+                >
+                  <span class="font-regular text-20 content-black"
+                    >2026<br /></span
+                  >Yeni Tasarımlar
+                </h3>
+                <div
+                  class="b-btn-small animate__animated animate__fadeInUp animate__faster animate-delay-03s"
+                >
+                  HEMEN İNCELE
+                </div>
+              </div>
+            </a>
+            <img
+              class="figure animate__animated animate__slideInUp animate__faster"
+              src="images_sevgililer_gunu/heart-small.webp"
+              style="
+                margin-right: 0;
+                height: clamp(130px, calc(100vw * 205 / 1200), 205px);
+              "
+            />
+            <img
+              class="figure animate__animated animate__fadeInRight animate__faster animate-delay-02s"
+              src="images_sevgililer_gunu/small-2.webp"
+              style="
+                margin-right: 0;
+                height: clamp(130px, calc(100vw * 205 / 1200), 205px);
+              "
+            />
+          </article>
+
+          <!-- Small 3 -->
+          <article
+            class="banner animate__animated animate__fadeInUp animate__faster animate-delay-03s animate-disable-mobile p-24"
+            style="background-color: #fddde8 !important"
+          >
+            <a class="banner-link" href="#">
+              <div class="content">
+                <h3
+                  class="text-24 font-bold content-black lh-110 animate__animated animate__fadeInDown animate__faster"
+                >
+                  <span class="font-regular text-20 content-black"
+                    >Taptaze<br /></span
+                  >Premium Aranjmanlar
+                </h3>
+                <div
+                  class="b-btn-small animate__animated animate__fadeInUp animate__faster animate-delay-03s"
+                >
+                  HEMEN İNCELE
+                </div>
+              </div>
+            </a>
+            <img
+              class="figure animate__animated animate__slideInUp animate__faster"
+              src="images_sevgililer_gunu/heart-small.webp"
+              style="
+                margin-right: 0;
+                height: clamp(130px, calc(100vw * 205 / 1200), 205px);
+              "
+            />
+            <img
+              class="figure animate__animated animate__fadeInRight animate__faster animate-delay-02s"
+              src="images_sevgililer_gunu/small-3.webp"
+              style="
+                margin-right: 0;
+                height: clamp(130px, calc(100vw * 205 / 1200), 205px);
+              "
+            />
+          </article>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
