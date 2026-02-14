@@ -1,0 +1,626 @@
+<!doctype html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Category Banners - Şubat</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap"
+      rel="stylesheet"
+    />
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="../css/banner-main.css" />
+    <link rel="stylesheet" href="../css/animate.min.css" />
+    <!-- Category Banner CSS -->
+    <style>
+      .grid.category-banner * {
+        box-sizing: border-box;
+      }
+      .grid.category-banner {
+        display: flex !important;
+        width: 100% !important;
+        min-height: 280px !important;
+      }
+      .small-banners.category-banner {
+        width: 100% !important;
+        display: flex !important;
+      }
+      .small-banners.category-banner .banner {
+        min-height: 460px !important;
+        max-height: 460px !important;
+      }
+      .small-banners.category-banner > article {
+        flex: 1 1 0;
+        width: 100%;
+      }
+      article.row-center {
+        display: flex;
+        flex-direction: column;
+        gap: var(--size-xl);
+        border-radius: 0 !important;
+      }
+      article.row-center .category-app-discount {
+        width: 100%;
+        border-radius: var(--size-xl);
+        display: flex;
+        align-items: center;
+        gap: var(--size-xl);
+      }
+      article.row-center .category-app-discount .category-app-content {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        gap: var(--size-xl);
+      }
+      .category-ticker {
+        border: solid 1px var(--brand-light);
+        margin-bottom: var(--size-xl);
+        margin-top: var(--size-xl);
+        border-radius: var(--size-xl);
+        overflow-x: auto;
+        overflow-y: hidden;
+        cursor: grab;
+        -webkit-overflow-scrolling: touch;
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+        user-select: none;
+      }
+      .category-ticker::-webkit-scrollbar {
+        display: none;
+      }
+      .category-ticker.dragging {
+        cursor: grabbing;
+      }
+      @-webkit-keyframes ticker {
+        0% {
+          -webkit-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
+          visibility: visible;
+        }
+
+        100% {
+          -webkit-transform: translate3d(-50%, 0, 0);
+          transform: translate3d(-50%, 0, 0);
+        }
+      }
+
+      @keyframes ticker {
+        0% {
+          -webkit-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
+          visibility: visible;
+        }
+
+        100% {
+          -webkit-transform: translate3d(-50%, 0, 0);
+          transform: translate3d(-50%, 0, 0);
+        }
+      }
+
+      .ticker-wrapper {
+        padding: var(--size-xs);
+        display: inline-flex;
+        gap: var(--size-m);
+        white-space: nowrap;
+        box-sizing: content-box;
+        will-change: transform;
+        -webkit-animation-name: ticker;
+        animation-name: ticker;
+        -webkit-animation-duration: 30s;
+        animation-duration: 30s;
+        -webkit-animation-timing-function: linear;
+        animation-timing-function: linear;
+        -webkit-animation-iteration-count: infinite;
+        animation-iteration-count: infinite;
+      }
+      .category-ticker .ticker-content {
+        display: flex;
+        align-items: center;
+        gap: var(--size-xs);
+        padding: var(--size-xxs);
+        background-color: var(--brand-light);
+        color: var(--bn-black);
+        padding-right: var(--size-m) !important;
+        font-family: var(--family-primary);
+        width: max-content;
+        border-radius: var(--size-m);
+        font-weight: 500 !important;
+        font-size: var(--size-xl);
+        text-decoration: none;
+        cursor: grab;
+        transition: all 0.3s ease;
+        user-select: none;
+      }
+      .category-ticker .ticker-content:active {
+        cursor: grabbing;
+      }
+      @media (hover: hover) and (pointer: fine) {
+        .category-ticker:hover .ticker-wrapper {
+          -webkit-animation-play-state: paused;
+          animation-play-state: paused;
+        }
+
+        .category-ticker .ticker-content:hover {
+          background-color: var(--brand);
+          color: var(--bn-white);
+          cursor: pointer;
+          transition: all 0.3s ease;
+        }
+      }
+      .category-ticker .ticker-cat-img {
+        background-color: var(--bn-white);
+        border-radius: var(--size-xs);
+        width: var(--size-6xl);
+        height: var(--size-6xl);
+      }
+      .category-ticker .ticker-cat-img img {
+        width: var(--size-6xl);
+        height: var(--size-6xl);
+      }
+      /* Responsiveness */
+      @media (max-width: 1024px) and (min-width: 768px) {
+        article.row-center .category-app-discount {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+        article.row-center .category-app-discount .category-app-content {
+          align-items: center;
+        }
+        article.row-center .category-app-discount .b-btn-small {
+          align-self: flex-start;
+        }
+        .category-app-discount .b-btn-small {
+          width: 100% !important;
+          max-width: none !important;
+        }
+        .small-banners.category-banner .banner {
+          min-height: 390px !important;
+          max-height: 390px !important;
+        }
+      }
+      @media (max-width: 768px) {
+        .grid.category-banner {
+          overflow-x: auto;
+          -webkit-overflow-scrolling: touch;
+          scroll-behavior: smooth;
+          -ms-overflow-style: none;
+          scrollbar-width: none;
+        }
+        .grid.category-banner::-webkit-scrollbar {
+          display: none;
+        }
+        .grid.category-banner .hero {
+          min-height: 360px;
+          min-width: 320px;
+        }
+        .grid.category-banner .hero .content {
+          text-align: center !important;
+          align-items: center !important;
+        }
+        .grid.category-banner .hero img.figure {
+          margin: 0 auto !important;
+        }
+        .small-banners.category-banner .banner {
+          min-height: 390px !important;
+          max-height: 390px !important;
+          min-width: 320px;
+        }
+        .small-banners.category-banner .row-center {
+          min-height: 390px !important;
+          max-height: auto !important;
+          min-width: 320px;
+        }
+        .small-banners.category-banner .row-center .banner {
+          min-width: auto !important;
+        }
+        article.row-center .category-app-discount {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+        article.row-center .category-app-discount .category-app-content {
+          align-items: center;
+        }
+        article.row-center .category-app-discount .b-btn-small {
+          align-self: flex-start;
+        }
+        .category-app-discount .b-btn-small {
+          width: 100% !important;
+          max-width: none !important;
+        }
+        article.row-center .banner {
+          position: relative;
+        }
+      }
+    </style>
+  </head>
+
+  <body style="margin: 10px">
+    <main class="container" style="max-width: 1480px; margin: auto">
+      <!-- First Row -->
+      <section class="grid category-banner">
+        <article
+          class="hero surface-brand-light p-36 animate__animated animate__fadeInDown animate__faster animate-disable-mobile"
+          style="width: 100%"
+        >
+          <a class="banner-link" href="/cok-satanlar">
+            <div
+              class="content content-left text-left"
+              style="justify-content: space-between"
+            >
+              <div class="row">
+                <h3
+                  class="text-30 font-regular lh-110 animate__animated animate__fadeInDown animate__faster"
+                >
+                  <span class="font-bold">2026<br /></span>EN ÇOK SATANLARI
+                </h3>
+                <p
+                  class="text-16 font-regular pt-12 animate__animated animate__fadeInDown animate__faster animate-delay-01s"
+                >
+                  En çok satan ürünleri keşfet
+                </p>
+              </div>
+              <div
+                class="b-btn-small animate__animated animate__fadeInUp animate__faster animate-delay-02s"
+                style="position: relative"
+              >
+                HEMEN İNCELE
+              </div>
+            </div>
+          </a>
+          <img
+            class="figure animate__animated animate__fadeInRight animate__faster animate-delay-02s"
+            src="cat-images/row1-img-1.webp"
+            style="
+              margin-right: 0;
+              height: clamp(242px, calc(100vw * 280 / 1200), 280px);
+            "
+          />
+        </article>
+
+        <article
+          class="hero surface-cream-light p-36 animate__animated animate__fadeInDown animate__faster animate-disable-mobile animate-delay-01s"
+          style="width: 100%"
+        >
+          <a class="banner-link" href="/dogum-gunu-cicekleri">
+            <div
+              class="content content-left text-left"
+              style="justify-content: space-between"
+            >
+              <div class="row">
+                <h3
+                  class="text-30 font-regular lh-110 animate__animated animate__fadeInDown animate__faster animate-delay-02s"
+                >
+                  <span class="font-bold">DOĞUM GÜNÜ<br /></span>SÜRPRİZLERİ
+                </h3>
+                <p
+                  class="text-16 font-regular pt-12 animate__animated animate__fadeInDown animate__faster animate-delay-03s"
+                >
+                  Doğum gününe renk kat
+                </p>
+              </div>
+
+              <div
+                class="b-btn-small animate__animated animate__fadeInUp animate__faster animate-delay-03s"
+                style="position: relative"
+              >
+                HEMEN İNCELE
+              </div>
+            </div>
+          </a>
+          <img
+            class="figure animate__animated animate__fadeInRight animate__faster animate-delay-03s"
+            src="cat-images/row1-img-2.webp"
+            style="
+              margin-right: 0;
+              height: clamp(242px, calc(100vw * 280 / 1200), 280px);
+            "
+          />
+        </article>
+      </section>
+
+      <!-- Ticker -->
+      <section
+        class="category-ticker animate__animated animate__fadeInUp animate__faster animate-delay-02s"
+      >
+        <div class="ticker-wrapper">
+          <!-- Category Item -->
+          <a href="/kokina" class="ticker-content">
+            <div class="ticker-cat-img">
+              <img src="cat-images/cat-1.webp" />
+            </div>
+            Kokina
+          </a>
+          <!-- Category Item -->
+          <a href="/cicek-buketleri" class="ticker-content">
+            <div class="ticker-cat-img">
+              <img src="cat-images/cat-2.webp" />
+            </div>
+            Çiçek Buketleri
+          </a>
+          <!-- Category Item -->
+          <a href="/guller" class="ticker-content">
+            <div class="ticker-cat-img">
+              <img src="cat-images/cat-3.webp" />
+            </div>
+            Güller
+          </a>
+          <!-- Category Item -->
+          <a href="/papatya" class="ticker-content">
+            <div class="ticker-cat-img">
+              <img src="cat-images/cat-4.webp" />
+            </div>
+            Papatya
+          </a>
+          <!-- Category Item -->
+          <a href="/kasimpati" class="ticker-content">
+            <div class="ticker-cat-img">
+              <img src="cat-images/cat-5.webp" />
+            </div>
+            Kasımpatı
+          </a>
+          <!-- Category Item -->
+          <a href="/premium-cicekler" class="ticker-content">
+            <div class="ticker-cat-img">
+              <img src="cat-images/cat-6.webp" />
+            </div>
+            Premium Çiçekler
+          </a>
+          <!-- Category Item -->
+          <a href="/lilyum-zambak" class="ticker-content">
+            <div class="ticker-cat-img">
+              <img src="cat-images/cat-7.webp" />
+            </div>
+            Lilyum
+          </a>
+          <!-- Category Item -->
+          <a href="/teraryum" class="ticker-content">
+            <div class="ticker-cat-img">
+              <img src="cat-images/cat-8.webp" />
+            </div>
+            Teraryum
+          </a>
+          <!-- Category Item -->
+          <a href="/celenkler" class="ticker-content">
+            <div class="ticker-cat-img">
+              <img src="cat-images/cat-9.webp" />
+            </div>
+            Çelenkler
+          </a>
+          <!-- Category Item -->
+          <a href="/tasarim-cicekler" class="ticker-content">
+            <div class="ticker-cat-img">
+              <img src="cat-images/cat-10.webp" />
+            </div>
+            Tasarım Çiçekler
+          </a>
+        </div>
+      </section>
+
+      <!-- Last Row -->
+      <section class="grid category-banner">
+        <div class="small-banners category-banner">
+          <article
+            class="banner surface-brand-light animate__animated animate__fadeInUp animate__faster animate-disable-mobile animate-delay-01s p-30"
+          >
+            <a class="banner-link" href="/orkide">
+              <div
+                class="content content-center text-center"
+                style="justify-content: space-between"
+              >
+                <h3
+                  class="text-30 font-bold lh-110 animate__animated animate__fadeInDown animate__faster"
+                >
+                  <span class="font-regular text-24"
+                    >BİRBİRİNDEN ZARİF<br /></span
+                  >ORKİDELER
+                </h3>
+                <div
+                  class="b-btn-small animate__animated animate__fadeInUp animate__faster animate-delay-03s"
+                  style="position: relative; width: max-content"
+                >
+                  HEMEN İNCELE
+                </div>
+              </div>
+            </a>
+            <img
+              class="figure animate__animated animate__fadeInRight animate__faster animate-delay-02s"
+              src="cat-images/row2-img-1.webp"
+              style="
+                margin: 0 auto;
+                height: clamp(300px, calc(100vw * 352 / 1200), 352px);
+              "
+            />
+          </article>
+
+          <article class="row-center">
+            <div
+              class="banner surface-cream-light animate__animated animate__fadeInUp animate__faster animate-disable-mobile animate-delay-02s p-30"
+              style="
+                width: 100%;
+                max-height: 100% !important;
+                min-height: auto !important;
+                height: 100%;
+                border-radius: var(--size-xl);
+                box-sizing: border-box;
+              "
+            >
+              <a class="banner-link" href="/cicek">
+                <div
+                  class="content content-center text-center"
+                  style="justify-content: space-between"
+                >
+                  <h3
+                    class="text-30 font-bold lh-110 animate__animated animate__fadeInDown animate__faster"
+                  >
+                    <span class="font-regular text-24">BUGÜNÜN<br /></span
+                    >FAVORİLERİ
+                  </h3>
+                  <div
+                    class="b-btn-small animate__animated animate__fadeInUp animate__faster animate-delay-04s"
+                    style="position: relative; width: max-content"
+                  >
+                    FAVORİNİ SEÇ
+                  </div>
+                </div>
+              </a>
+              <img
+                class="figure animate__animated animate__fadeInRight animate__faster animate-delay-02s"
+                src="cat-images/row2-img-2.webp"
+                style="
+                  margin: 0 auto;
+                  height: clamp(200px, calc(100vw * 264 / 1200), 264px);
+                "
+              />
+            </div>
+
+            <!-- App Discount -->
+            <a
+              class="banner-link"
+              style="display: flex"
+              href="https://www.tazecicek.com/applink"
+            >
+              <div
+                class="category-app-discount surface-brand p-16 animate__animated animate__fadeInUp animate__faster animate-disable-mobile animate-delay-02s"
+              >
+                <div class="category-app-content">
+                  <img
+                    class="animate__animated animate__fadeInRight animate__faster animate-delay-02s"
+                    src="cat-images/logo-icon.svg"
+                    style="height: var(--size-5xl)"
+                  />
+                  <p class="content-white text-14 font-regular">
+                    <span class="font-bold">APP100</span> koduyla uygulamadan
+                    ilk alışverişine
+                    <span class="font-bold">100 TL</span> indirim!
+                  </p>
+                </div>
+                <div
+                  class="b-btn-small surface-white content-brand font-bold animate__animated animate__fadeInUp animate__faster animate-delay-03s"
+                  style="
+                    position: relative;
+                    width: auto;
+                    white-space: nowrap;
+                    box-sizing: border-box;
+                    text-align: center;
+                    padding: var(--size-xs) var(--size-l) !important;
+                  "
+                >
+                  HEMEN İNDİR
+                </div>
+              </div>
+            </a>
+          </article>
+
+          <article
+            class="banner surface-brand-light animate__animated animate__fadeInUp animate__faster animate-disable-mobile animate-delay-03s p-30"
+          >
+            <a class="banner-link" href="/saksi-cicekleri">
+              <div
+                class="content content-center text-center"
+                style="justify-content: space-between"
+              >
+                <h3
+                  class="text-30 font-bold lh-110 animate__animated animate__fadeInDown animate__faster"
+                >
+                  <span class="font-regular text-24">TAPTAZE<br /></span>SAKSI
+                  ÇİÇEKLERİ
+                </h3>
+                <div
+                  class="b-btn-small animate__animated animate__fadeInUp animate__faster animate-delay-05s"
+                  style="position: relative; width: max-content"
+                >
+                  HEMEN İNCELE
+                </div>
+              </div>
+            </a>
+            <img
+              class="figure animate__animated animate__fadeInRight animate__faster animate-delay-02s"
+              src="cat-images/row2-img-3.webp"
+              style="
+                margin: 0 auto;
+                height: clamp(300px, calc(100vw * 352 / 1200), 352px);
+              "
+            />
+          </article>
+        </div>
+      </section>
+    </main>
+    <!-- Category Banner JS -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const wrapper = document.querySelector(".ticker-wrapper");
+        const container = document.querySelector(".category-ticker");
+
+        if (!wrapper || !container) return;
+
+        const items = Array.from(wrapper.children);
+        const fragment = document.createDocumentFragment();
+
+        items.forEach(function (item) {
+          fragment.appendChild(item.cloneNode(true));
+        });
+
+        wrapper.appendChild(fragment);
+
+        const originalWidth = wrapper.scrollWidth / 2;
+
+        container.addEventListener("scroll", function () {
+          const max = originalWidth;
+          if (container.scrollLeft >= max) {
+            container.scrollLeft -= max;
+          }
+        });
+
+        let isDown = false;
+        let startX;
+        let scrollLeft;
+
+        function startDrag(clientX) {
+          isDown = true;
+          container.classList.add("dragging");
+          startX = clientX - container.offsetLeft;
+          scrollLeft = container.scrollLeft;
+          wrapper.style.animationPlayState = "paused";
+          wrapper.style.webkitAnimationPlayState = "paused";
+        }
+
+        function endDrag() {
+          if (!isDown) return;
+          isDown = false;
+          container.classList.remove("dragging");
+          wrapper.style.animationPlayState = "";
+          wrapper.style.webkitAnimationPlayState = "";
+        }
+
+        function dragTo(clientX) {
+          if (!isDown) return;
+          const x = clientX - container.offsetLeft;
+          const walk = x - startX;
+          container.scrollLeft = scrollLeft - walk;
+        }
+
+        container.addEventListener("mousedown", function (e) {
+          if (e.button !== 0) return;
+          e.preventDefault();
+          startDrag(e.pageX);
+        });
+
+        container.addEventListener("mouseleave", function () {
+          endDrag();
+        });
+
+        container.addEventListener("mouseup", function () {
+          endDrag();
+        });
+
+        container.addEventListener("mousemove", function (e) {
+          if (!isDown) return;
+          e.preventDefault();
+          dragTo(e.pageX);
+        });
+      });
+    </script>
+  </body>
+</html>

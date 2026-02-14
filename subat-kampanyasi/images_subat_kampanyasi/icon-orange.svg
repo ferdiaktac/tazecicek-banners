@@ -1,0 +1,20 @@
+<svg width="490" height="317" viewBox="0 0 490 317" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g filter="url(#filter0_f_1533_7255)">
+<path d="M157.542 113.127C127.299 72.0207 75.0298 23.3691 40.5393 43.5826C25.999 52.0908 16.8795 74.599 11.8368 97.7688C3.88631 137.508 5.50479 170.527 15.8267 187.552C22.3598 198.458 33.8489 206.047 49.7868 210.12C61.7348 213.077 75.2953 214.22 89.4137 214.65C95.8463 214.847 102.393 214.882 108.94 214.847C87.4222 245.752 71.7568 274.817 70.8328 297.085C69.7721 313.113 92.7013 340.906 130.687 353.97C187.899 373.796 207.154 319.129 208.851 271.723C210.814 217.03 191.18 158.512 157.57 113.144H157.542V113.127Z" fill="#E1AA2C"/>
+</g>
+<g filter="url(#filter1_f_1533_7255)">
+<path d="M309.631 159.759C305.899 153.494 299.33 149.188 290.169 146.85C283.342 145.166 275.555 144.513 267.468 144.238C263.779 144.126 260.033 144.109 256.287 144.135C268.622 126.413 277.576 109.775 278.113 97.0043C278.707 87.8171 264.46 70.0959 242.684 62.6018C209.899 51.2489 200.021 84.3623 199.047 111.503C197.936 142.82 209.182 176.371 228.415 202.334C245.75 225.874 275.677 253.745 295.44 242.185C303.778 237.313 309.007 224.404 311.865 211.152C316.407 188.386 315.511 169.462 309.581 159.707L309.609 159.75H309.624L309.631 159.759Z" fill="#E1AA2C"/>
+</g>
+<defs>
+<filter id="filter0_f_1533_7255" x="-17.1814" y="14.8557" width="250.167" height="367.289" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+<feGaussianBlur stdDeviation="12" result="effect1_foregroundBlur_1533_7255"/>
+</filter>
+<filter id="filter1_f_1533_7255" x="174.972" y="36.3096" width="163.769" height="232.575" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+<feGaussianBlur stdDeviation="12" result="effect1_foregroundBlur_1533_7255"/>
+</filter>
+</defs>
+</svg>
