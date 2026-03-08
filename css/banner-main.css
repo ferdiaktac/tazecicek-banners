@@ -719,7 +719,7 @@
   display: grid;
   gap: var(--size-xl);
   grid-template-columns: 2fr 1fr;
-  grid-auto-rows: minmax(317px, 1fr) !important;
+  grid-auto-rows: minmax(317px, 1fr) minmax(317px, 1fr) auto;
 }
 .hero {
   grid-row: 1 / span 2;
