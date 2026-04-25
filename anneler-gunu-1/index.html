@@ -20,6 +20,16 @@
       class="container"
       style="max-width: 1480px; margin: auto; margin-bottom: 24px"
     >
+      <style>
+        @media (max-width: 500px) {
+          .tc-hero-mobile {
+            bottom: -20px !important;
+          }
+          .tc-hero-wing-mobile {
+            bottom: -32px !important;
+          }
+        }
+      </style>
       <section class="grid">
         <!-- Hero -->
         <article class="hero surface-cream-light p-36">
@@ -74,20 +84,21 @@
             </div>
           </a>
           <img
-            class="figure animate__animated animate__slideInUp animate__faster"
+            class="figure animate__animated animate__slideInUp animate__faster tc-hero-wing-mobile"
             src="images_anneler-gunu/logo-icon.svg"
             style="
-              width: clamp(420px, calc(100vw * 575 / 1200), 575px);
-              bottom: -80px;
+              width: clamp(420px, calc(100vw * 640 / 1200), 640px);
+              bottom: -120px;
             "
           />
           <img
-            class="figure animate__animated animate__fadeInUp animate__fast animate-delay-02s"
+            class="figure animate__animated animate__fadeInUp animate__fast animate-delay-02 tc-hero-mobile"
             src="images_anneler-gunu/slider-1-1.webp"
             style="
-              height: clamp(420px, calc(100vw * 480 / 1200), 480px);
+              height: clamp(380px, calc(100vw * 650 / 1200), 650px);
               left: 50%;
               transform: translateX(-50%) !important;
+              bottom: -160px;
             "
           />
         </article>
