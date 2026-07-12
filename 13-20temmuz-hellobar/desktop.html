@@ -1,0 +1,420 @@
+<!doctype html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Taze Çiçek – 13-20 Temmuz Hello Bar</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,600;0,700;0,800;0,900;1,400;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        background: #ffffff;
+        font-family: "Nunito", sans-serif;
+        padding-top: 100px;
+      }
+
+      /* ── HELLO BAR ── */
+      .hello-bar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100px;
+        background: #fff3d7;
+        z-index: 9999;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        user-select: none;
+      }
+
+      .bar-inner {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        height: 76px;
+      }
+
+      /* ── Star + Text ── */
+      .bar-left {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        flex-shrink: 0;
+      }
+
+      .star-wrap {
+        width: 78px;
+        height: 78px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+      }
+
+      .star-svg {
+        width: 67px;
+        height: 70px;
+        animation: star-spin 6s linear infinite;
+        will-change: transform;
+        transform-origin: center;
+        display: block;
+      }
+
+      @keyframes star-spin {
+        from {
+          transform: rotate(0deg);
+        }
+        to {
+          transform: rotate(360deg);
+        }
+      }
+
+      .bar-text {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        flex-shrink: 0;
+      }
+      .bar-text .t1 {
+        font-size: 25px;
+        font-weight: 800;
+        color: #003ca6;
+        line-height: 1.1;
+        white-space: nowrap;
+      }
+      .bar-text .t2 {
+        font-size: 32px;
+        font-weight: 800;
+        color: #003ca6;
+        line-height: 1.1;
+        white-space: nowrap;
+      }
+
+      /* ── Discount Badge ── */
+      .bar-badge {
+        background: #003ca6;
+        border-radius: 20px;
+        padding: 0 24px;
+        height: 68px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        flex-shrink: 0;
+      }
+      .badge-main {
+        font-size: 52px;
+        font-weight: 800;
+        color: #e1aa2c;
+        line-height: 1;
+        letter-spacing: -1px;
+        white-space: nowrap;
+      }
+      .badge-sub {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+      }
+      .badge-sub .s1 {
+        font-size: 16px;
+        font-weight: 400;
+        color: #e1aa2c;
+        white-space: nowrap;
+        line-height: 1;
+      }
+      .badge-sub .s2 {
+        font-size: 24px;
+        font-weight: 800;
+        color: #e1aa2c;
+        white-space: nowrap;
+        line-height: 1;
+      }
+
+      /* ── CAROUSEL ──
+       Viewport = 100px (full bar height) with overflow:hidden.
+       3 cards + 2 clones, each ~40px, gap 7px → step ~47px.
+       Bar center (50px) aligns with active card center.
+       Inactive cards above/below are visible within the 100px window
+       and are blurred + faded. Top/bottom fade masks blend them.
+    */
+      .carousel-vp {
+        position: relative;
+        height: 100px;
+        overflow: hidden;
+        flex-shrink: 0;
+        /* Horizontal padding so scale(1.05) doesn't get clipped on the sides */
+        padding: 0 8px;
+        /* Negative margin to keep total width unchanged */
+        margin: 0 -8px;
+      }
+
+      /* Fade top/bottom into bar background */
+      .carousel-vp::before,
+      .carousel-vp::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        height: 22px;
+        z-index: 3;
+        pointer-events: none;
+      }
+      .carousel-vp::before {
+        top: 0;
+        background: linear-gradient(
+          to bottom,
+          #fff3d7 0%,
+          rgba(255, 243, 215, 0) 100%
+        );
+      }
+      .carousel-vp::after {
+        bottom: 0;
+        background: linear-gradient(
+          to top,
+          #fff3d7 0%,
+          rgba(255, 243, 215, 0) 100%
+        );
+      }
+
+      .offer-track {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 7px;
+        will-change: transform;
+      }
+
+      .offer-card {
+        background: #e1aa2c;
+        border-radius: 12px;
+        padding: 9px 14px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        flex-shrink: 0;
+        white-space: nowrap;
+        transition:
+          opacity 0.48s ease,
+          filter 0.48s ease,
+          transform 0.48s cubic-bezier(0.34, 1.56, 0.64, 1);
+      }
+
+      .offer-card.is-active {
+        opacity: 1;
+        filter: blur(0px);
+        transform: scale(1.05);
+      }
+
+      .offer-card.is-inactive {
+        opacity: 0.5;
+        filter: blur(2.5px);
+        transform: scale(0.88);
+      }
+
+      .card-cond {
+        font-size: 16px;
+        font-weight: 600;
+        font-style: italic;
+        color: #292929;
+      }
+      .card-amt {
+        font-size: 24px;
+        font-weight: 900;
+        color: #003ca6;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="hello-bar" id="helloBar">
+      <div class="bar-inner">
+        <!-- Star + Text -->
+        <div class="bar-left">
+          <div class="star-wrap" aria-hidden="true">
+            <svg
+              class="star-svg"
+              width="67"
+              height="70"
+              viewBox="0 0 67 70"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M32.2523 0.804352C32.4663 -0.26812 33.9997 -0.268116 34.2137 0.804356L37.7048 18.3035C37.8576 19.0693 38.7901 19.3723 39.3638 18.8425L52.4739 6.73746C53.2774 5.99558 54.518 6.89691 54.0607 7.89032L46.5993 24.0994C46.2728 24.8088 46.8491 25.602 47.6247 25.5107L65.3461 23.4234C66.4322 23.2955 66.9061 24.7539 65.9522 25.2888L50.3884 34.0165C49.7072 34.3985 49.7072 35.379 50.3884 35.761L65.9522 44.4887C66.9061 45.0236 66.4322 46.482 65.3461 46.3541L47.6247 44.2668C46.8491 44.1754 46.2728 44.9686 46.5993 45.6781L54.0607 61.8872C54.518 62.8806 53.2774 63.7819 52.4739 63.04L39.3638 50.935C38.7901 50.4052 37.8576 50.7081 37.7048 51.474L34.2137 68.9731C33.9997 70.0456 32.4663 70.0456 32.2523 68.9731L28.7612 51.474C28.6084 50.7081 27.676 50.4052 27.1022 50.935L13.9921 63.04C13.1886 63.7819 11.948 62.8806 12.4053 61.8872L19.8667 45.6781C20.1932 44.9686 19.6169 44.1754 18.8413 44.2668L1.11987 46.3541C0.0337747 46.482 -0.440076 45.0236 0.513787 44.4887L16.0776 35.761C16.7588 35.379 16.7588 34.3985 16.0776 34.0165L0.513784 25.2888C-0.44008 24.7539 0.033779 23.2955 1.11988 23.4234L18.8413 25.5107C19.6169 25.602 20.1932 24.8088 19.8667 24.0994L12.4053 7.89031C11.948 6.8969 13.1886 5.99558 13.9921 6.73747L27.1022 18.8425C27.676 19.3723 28.6084 19.0693 28.7612 18.3035L32.2523 0.804352Z"
+                fill="#E1AA2C"
+              />
+            </svg>
+          </div>
+          <div class="bar-text">
+            <span class="t1">13-20 Temmuz</span>
+            <span class="t2">Ayrıcalıkları</span>
+          </div>
+        </div>
+
+        <!-- Discount Badge -->
+        <div class="bar-badge">
+          <span class="badge-main">350 TL</span>
+          <div class="badge-sub">
+            <span class="s1">'ye varan</span>
+            <span class="s2">İndirimler</span>
+          </div>
+        </div>
+
+        <!-- Offer Carousel -->
+        <div class="carousel-vp" id="carouselVP">
+          <div class="offer-track" id="offerTrack">
+            <!-- [0] Clone of real[2] = 350 TL (seamless backwards loop) -->
+            <div class="offer-card is-inactive" aria-hidden="true">
+              <span class="card-cond">2.500 TL ve üzeri</span>
+              <span class="card-amt">350 TL</span>
+            </div>
+
+            <!-- [1] real[0]: 100 TL -->
+            <div class="offer-card is-active" data-real="0">
+              <span class="card-cond">1.000 TL ve üzeri</span>
+              <span class="card-amt">100 TL</span>
+            </div>
+
+            <!-- [2] real[1]: 225 TL -->
+            <div class="offer-card is-inactive" data-real="1">
+              <span class="card-cond">1.500 TL ve üzeri</span>
+              <span class="card-amt">225 TL</span>
+            </div>
+
+            <!-- [3] real[2]: 350 TL -->
+            <div class="offer-card is-inactive" data-real="2">
+              <span class="card-cond">2.500 TL ve üzeri</span>
+              <span class="card-amt">350 TL</span>
+            </div>
+
+            <!-- [4] Clone of real[0] = 100 TL (seamless forward loop) -->
+            <div class="offer-card is-inactive" aria-hidden="true">
+              <span class="card-cond">1.000 TL ve üzeri</span>
+              <span class="card-amt">100 TL</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      (function () {
+        "use strict";
+
+        var REAL_COUNT = 3;
+        var HOLD_MS = 1700;
+        var EASE_MS = 520;
+        var GAP = 7;
+
+        var vp = document.getElementById("carouselVP");
+        var track = document.getElementById("offerTrack");
+        var cards = Array.from(track.querySelectorAll(".offer-card"));
+        // [0]=clone(-1), [1..3]=real, [4]=clone(3)
+
+        var currentReal = 0;
+        var locked = false;
+        var timerID = null;
+
+        var CARD_H = 0;
+        var STEP = 0;
+        var VP_MID = 0; // = vp.offsetHeight / 2 = 50px
+
+        function measure() {
+          CARD_H = cards[1].offsetHeight;
+          STEP = CARD_H + GAP;
+          VP_MID = vp.offsetHeight / 2; // 50
+        }
+
+        // Y so card[arrayIdx] center sits at VP_MID
+        function yFor(idx) {
+          return VP_MID - (idx * STEP + CARD_H / 2);
+        }
+
+        function moveTo(idx, animate) {
+          track.style.transition = animate
+            ? "transform " + EASE_MS + "ms cubic-bezier(0.34,1.48,0.64,1)"
+            : "none";
+          track.style.transform = "translateY(" + yFor(idx) + "px)";
+        }
+
+        function applyStates(activeIdx) {
+          cards.forEach(function (c, i) {
+            c.classList.toggle("is-active", i === activeIdx);
+            c.classList.toggle("is-inactive", i !== activeIdx);
+          });
+        }
+
+        function advance() {
+          if (locked) return;
+          locked = true;
+
+          var nextReal = (currentReal + 1) % REAL_COUNT;
+          var nextArr = nextReal + 1;
+
+          if (currentReal === REAL_COUNT - 1) {
+            // Last → slide to clone[4], snap to real[1]
+            moveTo(4, true);
+            applyStates(4);
+            setTimeout(function () {
+              // 1) Kart transition'larını kapat — flash önlenir
+              cards.forEach(function (c) {
+                c.style.transition = "none";
+              });
+              // 2) Track'i sessizce snap et
+              moveTo(1, false);
+              // 3) Active class'ı geç — transition yok, flash yok
+              applyStates(1);
+              // 4) Reflow'u zorla (değişiklikler hemen işlensin)
+              void track.offsetHeight;
+              // 5) 2 frame sonra transition'ları geri aç
+              requestAnimationFrame(function () {
+                requestAnimationFrame(function () {
+                  cards.forEach(function (c) {
+                    c.style.transition = "";
+                  });
+                  currentReal = 0;
+                  locked = false;
+                });
+              });
+            }, EASE_MS + 80);
+          } else {
+            moveTo(nextArr, true);
+            applyStates(nextArr);
+            currentReal = nextReal;
+            setTimeout(function () {
+              locked = false;
+            }, EASE_MS + 80);
+          }
+        }
+
+        function init() {
+          measure();
+          moveTo(1, false);
+          applyStates(1);
+          currentReal = 0;
+          if (!timerID) timerID = setInterval(advance, HOLD_MS);
+        }
+
+        if (document.readyState === "complete") {
+          setTimeout(init, 120);
+        } else {
+          window.addEventListener("load", function () {
+            setTimeout(init, 120);
+          });
+        }
+      })();
+    </script>
+  </body>
+</html>
