@@ -42,6 +42,9 @@
           width: 100% !important;
           gap: 8px !important;
         }
+        .discount-code-wrapper {
+          width: 100% !important;
+        }
         .offer-item-mobile-stack {
           flex-direction: column !important;
           justify-content: center !important;
@@ -50,6 +53,18 @@
           padding-left: 4px !important;
           padding-right: 4px !important;
           text-align: center;
+        }
+        .mobile-code-wrapper {
+          flex-direction: column !important;
+          height: auto !important;
+        }
+        .mobile-code-title {
+          background-color: #ead5a4 !important;
+          padding-top: 4px !important;
+          font-size: 10px !important;
+        }
+        .code {
+          height: 20px !important;
         }
       }
     </style>
@@ -146,47 +161,145 @@
                     "
                     class="mt-16 offer-wrapper-mobile"
                   >
-                    <div
-                      class="surface-cream content-brand text-24 pt-4 pb-4 pl-12 pr-12 radius-12 offer-item-mobile-stack"
-                      style="
-                        display: flex;
-                        align-items: center;
-                        gap: 4px;
-                        font-weight: 800 !important;
-                      "
-                    >
-                      <span class="text-14 font-regular content-black"
-                        >1.000 TL
-                        <span class="mobile-break">ve üzeri</span></span
-                      >100 TL
+                    <div class="discount-code-wrapper">
+                      <div
+                        class="surface-cream content-brand text-24 pt-4 pb-4 pl-12 pr-12 offer-item-mobile-stack"
+                        style="
+                          display: flex;
+                          align-items: center;
+                          gap: 4px;
+                          font-weight: 800 !important;
+                          border-radius: var(--size-m) var(--size-m) 0px 0px;
+                        "
+                      >
+                        <span class="text-14 font-regular content-black lh-110"
+                          >1.000 TL
+                          <span class="mobile-break">ve üzeri</span></span
+                        >100 TL
+                      </div>
+                      <div
+                        class="code-wrapper surface-cream-light mobile-code-wrapper"
+                        style="
+                          border: solid 1px var(--cream);
+                          display: flex;
+                          align-items: center;
+                          border-radius: 0px 0px var(--size-m) var(--size-m);
+                          overflow: hidden;
+                        "
+                      >
+                        <span
+                          class="surface-cream-light content-black text-12 font-bold mobile-code-title"
+                          style="width: 100%"
+                          >İndirim Kodu</span
+                        >
+                        <span
+                          class="code text-14 content-brand copy-code-btn"
+                          style="
+                            width: 100%;
+                            background-color: #ead5a4;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            height: 32px;
+                            font-weight: 800 !important;
+                          "
+                          >TEMMUZ100</span
+                        >
+                      </div>
                     </div>
-                    <div
-                      class="surface-cream content-brand text-24 pt-4 pb-4 pl-12 pr-12 radius-12 offer-item-mobile-stack"
-                      style="
-                        display: flex;
-                        align-items: center;
-                        gap: 4px;
-                        font-weight: 800 !important;
-                      "
-                    >
-                      <span class="text-14 font-regular content-black"
-                        >1.500 TL
-                        <span class="mobile-break">ve üzeri</span></span
-                      >225 TL
+
+                    <div class="discount-code-wrapper">
+                      <div
+                        class="surface-cream content-brand text-24 pt-4 pb-4 pl-12 pr-12 offer-item-mobile-stack"
+                        style="
+                          display: flex;
+                          align-items: center;
+                          gap: 4px;
+                          font-weight: 800 !important;
+                          border-radius: var(--size-m) var(--size-m) 0px 0px;
+                        "
+                      >
+                        <span class="text-14 font-regular content-black lh-110"
+                          >1.500 TL
+                          <span class="mobile-break">ve üzeri</span></span
+                        >225 TL
+                      </div>
+                      <div
+                        class="code-wrapper surface-cream-light mobile-code-wrapper"
+                        style="
+                          border: solid 1px var(--cream);
+                          display: flex;
+                          align-items: center;
+                          border-radius: 0px 0px var(--size-m) var(--size-m);
+                          overflow: hidden;
+                        "
+                      >
+                        <span
+                          class="surface-cream-light content-black text-12 font-bold mobile-code-title"
+                          style="width: 100%"
+                          >İndirim Kodu</span
+                        >
+                        <span
+                          class="code text-14 content-brand copy-code-btn"
+                          style="
+                            width: 100%;
+                            background-color: #ead5a4;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            height: 32px;
+                            font-weight: 800 !important;
+                          "
+                          >TEMMUZ225</span
+                        >
+                      </div>
                     </div>
-                    <div
-                      class="surface-cream content-brand text-24 pt-4 pb-4 pl-12 pr-12 radius-12 offer-item-mobile-stack"
-                      style="
-                        display: flex;
-                        align-items: center;
-                        gap: 4px;
-                        font-weight: 800 !important;
-                      "
-                    >
-                      <span class="text-14 font-regular content-black"
-                        >2.500 TL
-                        <span class="mobile-break">ve üzeri</span></span
-                      >350 TL
+
+                    <div class="discount-code-wrapper">
+                      <div
+                        class="surface-cream content-brand text-24 pt-4 pb-4 pl-12 pr-12 offer-item-mobile-stack"
+                        style="
+                          display: flex;
+                          align-items: center;
+                          gap: 4px;
+                          font-weight: 800 !important;
+                          border-radius: var(--size-m) var(--size-m) 0px 0px;
+                        "
+                      >
+                        <span class="text-14 font-regular content-black lh-110"
+                          >2.500 TL
+                          <span class="mobile-break">ve üzeri</span></span
+                        >350 TL
+                      </div>
+                      <div
+                        class="code-wrapper surface-cream-light mobile-code-wrapper"
+                        style="
+                          border: solid 1px var(--cream);
+                          display: flex;
+                          align-items: center;
+                          border-radius: 0px 0px var(--size-m) var(--size-m);
+                          overflow: hidden;
+                        "
+                      >
+                        <span
+                          class="surface-cream-light content-black text-12 font-bold mobile-code-title"
+                          style="width: 100%"
+                          >İndirim Kodu</span
+                        >
+                        <span
+                          class="code text-14 content-brand copy-code-btn"
+                          style="
+                            width: 100%;
+                            background-color: #ead5a4;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            height: 32px;
+                            font-weight: 800 !important;
+                          "
+                          >TEMMUZ350</span
+                        >
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -203,7 +316,7 @@
           <img
             class="figure animate__animated animate__slideInUp animate__faster animate-delay-02s"
             src="images_13-20temmuz/slider-1-1.webp"
-            style="height: clamp(352px, calc(100vw * 416 / 1200), 416px)"
+            style="height: clamp(290px, calc(100vw * 390 / 1200), 390px)"
           />
         </article>
 
@@ -423,5 +536,91 @@
         </div>
       </section>
     </main>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const codeEls = document.querySelectorAll(".copy-code-btn");
+        if (codeEls.length === 0) return;
+
+        codeEls.forEach((codeEl) => {
+          // Value
+          const codeValue = codeEl.textContent.trim();
+
+          // Utulities
+          codeEl.style.whiteSpace = "nowrap";
+          codeEl.style.display = "flex";
+          codeEl.style.overflow = "visible";
+          codeEl.style.cursor = "pointer";
+
+          // Tooltip
+          const tooltip = document.createElement("div");
+          tooltip.textContent = "Kopyala";
+          tooltip.style.position = "absolute";
+          tooltip.style.left = "50%";
+          tooltip.style.top = "100%";
+          tooltip.style.transform = "translate(-50%, 6px)";
+          tooltip.style.padding = "8px 12px";
+          tooltip.style.fontSize = "12px";
+          tooltip.style.lineHeight = "1";
+          tooltip.style.backgroundColor = "#292929";
+          tooltip.style.color = "#ffffff";
+          tooltip.style.borderRadius = "8px";
+          tooltip.style.whiteSpace = "nowrap";
+          tooltip.style.boxShadow = "0 2px 4px rgba(0,0,0,.15)";
+          tooltip.style.opacity = "0";
+          tooltip.style.pointerEvents = "none";
+          tooltip.style.transition = "opacity .15s ease-out";
+          tooltip.style.zIndex = "10";
+
+          codeEl.style.position = "relative";
+          codeEl.appendChild(tooltip);
+
+          codeEl.addEventListener("mouseenter", () => {
+            tooltip.style.opacity = "1";
+            const discountWrap = codeEl.closest(".discount");
+            if (discountWrap) discountWrap.style.overflow = "visible";
+          });
+
+          codeEl.addEventListener("mouseleave", () => {
+            tooltip.style.opacity = "0";
+            const discountWrap = codeEl.closest(".discount");
+            if (discountWrap) discountWrap.style.overflow = "hidden";
+          });
+
+          codeEl.addEventListener("click", (event) => {
+            event.stopPropagation();
+            event.preventDefault();
+            // Copy to clipbord
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+              navigator.clipboard.writeText(codeValue).catch(() => {});
+            }
+
+            const originalText = codeValue;
+            const originalBg = codeEl.style.backgroundColor;
+            const originalColor = codeEl.style.color;
+            const originalBorderColor = codeEl.style.borderColor;
+
+            // Copied
+            if (codeEl.firstChild) codeEl.firstChild.nodeValue = "Kopyalandı";
+            codeEl.style.backgroundColor = "#B7FFD6";
+            codeEl.style.borderColor = "#B7FFD6";
+            codeEl.style.color = "#168F4A";
+
+            // Text Update
+            codeEl.setAttribute("title", "Kopyalandı");
+            tooltip.textContent = "Kopyalandı";
+
+            // Delay
+            setTimeout(() => {
+              if (codeEl.firstChild) codeEl.firstChild.nodeValue = originalText;
+              codeEl.style.backgroundColor = originalBg;
+              codeEl.style.borderColor = originalBorderColor || "";
+              codeEl.style.color = originalColor;
+              codeEl.setAttribute("title", "Kopyala");
+              tooltip.textContent = "Kopyala";
+            }, 1500);
+          });
+        });
+      });
+    </script>
   </body>
 </html>
