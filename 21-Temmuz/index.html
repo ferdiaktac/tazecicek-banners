@@ -1,0 +1,376 @@
+<!doctype html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>13-20 Temmuz Kampanyası</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap"
+      rel="stylesheet"
+    />
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="../css/banner-main.css" />
+    <link rel="stylesheet" href="../css/animate.min.css" />
+    <style>
+      @keyframes label-float {
+        0% {
+          transform: translateY(0px) scale(1);
+        }
+        50% {
+          transform: translateY(-7px) scale(1.03);
+        }
+        100% {
+          transform: translateY(0px) scale(1);
+        }
+      }
+      .label-loop {
+        animation: label-float 3.6s ease-in-out infinite;
+        animation-delay: 0.6s;
+        transform-origin: center bottom;
+        will-change: transform;
+        display: inline-block;
+      }
+
+      @media (max-width: 768px) {
+        .mobile-label-size {
+          width: 120px !important;
+          height: 120px !important;
+        }
+        .offer-wrapper-mobile {
+          width: 100% !important;
+          gap: 8px !important;
+        }
+        .discount-code-wrapper {
+          width: 100% !important;
+        }
+        .offer-item-mobile-stack {
+          flex-direction: column !important;
+          justify-content: center !important;
+          gap: 2px !important;
+          width: 100% !important;
+          padding-left: 4px !important;
+          padding-right: 4px !important;
+          text-align: center;
+        }
+        .mobile-code-wrapper {
+          flex-direction: column !important;
+          height: auto !important;
+        }
+        .mobile-code-title {
+          background-color: #ead5a4 !important;
+          padding-top: 4px !important;
+          font-size: 10px !important;
+        }
+        .code {
+          height: 20px !important;
+        }
+      }
+    </style>
+  </head>
+
+  <body style="margin: 10px">
+    <main
+      class="container"
+      style="max-width: 1480px; margin: auto; margin-bottom: 24px"
+    >
+      <section class="grid">
+        <!-- Hero -->
+        <article class="hero surface-cream-light p-36">
+          <div
+            class="animate__animated animate__fadeInUp animate__faster animate-delay-04s"
+            style="
+              position: absolute;
+              right: 0;
+              bottom: 0;
+              z-index: 999 !important;
+            "
+          >
+            <img
+              class="label-loop mobile-label-size"
+              src="images_21temmuz/label.svg"
+            />
+          </div>
+          <a class="banner-link" href="/cicek">
+            <div
+              class="content content-center text-center"
+              style="justify-content: space-between"
+            >
+              <div class="row">
+                <div
+                  class="animate__animated animate__fadeInDown animate__faster"
+                  style="
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                  "
+                >
+                  <div
+                    class="surface-brand pl-30 pr-30 pt-16 pb-16 radius-24"
+                    style="
+                      display: flex;
+                      flex-direction: column;
+                      gap: clamp(4px, 0.3vw, 4px);
+                    "
+                  >
+                    <span
+                      class="text-24 font-bold content-cream lh-110"
+                      style="letter-spacing: 6px"
+                    >
+                      Anı Kaçırma
+                    </span>
+                    <p
+                      class="content-cream"
+                      style="
+                        font-size: clamp(34px, 3.8vw, 40px);
+                        font-weight: 800 !important ;
+                        margin: 0 !important;
+                        padding: 0 !important;
+                        display: flex;
+                        align-items: center;
+                      "
+                    >
+                      Hemen Gülümset
+                    </p>
+                  </div>
+                  <p class="content-black font-regular text-20 mt-20">
+                    Unutulmaz anlara eşlik edecek en taze aranjmanlar
+                    <br /><b>sadece 60-90 dakikada kapında!</b>
+                  </p>
+                </div>
+              </div>
+
+              <div
+                class="b-btn animate__animated animate__fadeInUp animate__faster animate-delay-03s"
+                style="position: relative"
+              >
+                Alışverişe Başla
+              </div>
+            </div>
+          </a>
+          <img
+            class="figure animate__animated animate__slideInUp animate__faster animate-delay-02s"
+            src="images_21temmuz/slider-1-1.webp"
+            style="height: clamp(290px, calc(100vw * 390 / 1200), 390px)"
+          />
+        </article>
+
+        <!-- Right Top -->
+        <article
+          class="grid-1 animate__animated animate__fadeInRight animate__faster animate-disable-mobile p-24 surface-cream-light"
+        >
+          <a class="banner-link" href="/cok-satanlar">
+            <div class="content content-left text-right content-right">
+              <h3
+                class="text-36 font-bold text-right content-right lh-110 animate__animated animate__fadeInDown animate__faster"
+                style="display: flex; flex-direction: column"
+              >
+                <span
+                  style="
+                    border-radius: 12px 0;
+                    background: var(--cream);
+                    display: flex;
+                    padding: 8px 12px;
+                    justify-content: center;
+                    align-items: center;
+                    color: var(--bn-blue);
+                    font-family: Nunito;
+                    font-size: var(--size-l);
+                    gap: 5px;
+                    font-style: normal;
+                    font-weight: 700 !important;
+                    line-height: normal;
+                    margin-bottom: var(--size-2xl);
+                    width: fit-content;
+                  "
+                >
+                  90 Dakikada Kapında</span
+                >
+                <span
+                  style="
+                    color: var(--bn-black);
+                    font-size: var(--size-3xl);
+                    line-height: normal !important;
+                    font-weight: 300;
+                    font-style: italic;
+                    margin-bottom: 4px;
+                  "
+                  >Çiçekler Taze,<br />Fırsatlar Büyük
+                </span>
+                Çok Satanlar
+              </h3>
+              <div
+                class="b-btn-small animate__animated animate__fadeInUp animate__faster animate-delay-03s"
+              >
+                Hemen İncele
+              </div>
+            </div>
+          </a>
+          <img
+            class="figure animate__animated animate__fadeInLeft animate__faster animate-delay-03s"
+            src="images_21temmuz/grid-1.webp"
+            style="
+              height: clamp(210px, calc(100vw * 317 / 1200), 317px);
+              left: 0;
+              margin-left: 0;
+            "
+          />
+        </article>
+
+        <!-- Right Bottom -->
+        <article
+          class="grid-2 animate__animated animate__fadeInRight animate__faster animate-delay-02s animate-disable-mobile p-24 surface-cream-light"
+        >
+          <a class="banner-link" href="/orkide">
+            <div
+              class="content content-left text-right content-right"
+              style="align-items: end !important"
+            >
+              <h3
+                class="text-36 font-bold text-right content-right lh-110 animate__animated animate__fadeInDown animate__faster"
+                style="display: flex; flex-direction: column"
+              >
+                <span
+                  style="
+                    border-radius: 12px 0;
+                    background: var(--cream);
+                    display: flex;
+                    padding: 8px 12px;
+                    justify-content: center;
+                    align-items: center;
+                    color: var(--bn-blue);
+                    font-family: Nunito;
+                    font-size: var(--size-l);
+                    gap: 5px;
+                    font-style: normal;
+                    font-weight: 700 !important;
+                    line-height: normal;
+                    margin-bottom: var(--size-2xl);
+                    width: fit-content;
+                  "
+                >
+                  En Çok Tercih Edilenler</span
+                >
+                <span
+                  style="
+                    color: var(--bn-black);
+                    font-size: var(--size-3xl);
+                    line-height: normal !important;
+                    font-weight: 300;
+                    font-style: italic;
+                    margin-bottom: 4px;
+                  "
+                  >Dalından Taptaze
+                </span>
+                Orkideler
+              </h3>
+              <div
+                class="b-btn-small animate__animated animate__fadeInUp animate__faster animate-delay-03s"
+              >
+                Hemen İncele
+              </div>
+            </div>
+          </a>
+          <img
+            class="figure animate__animated animate__fadeInLeft animate__faster animate-delay-03s"
+            src="images_21temmuz/grid-2.webp"
+            style="
+              height: clamp(210px, calc(100vw * 317 / 1200), 317px);
+              left: 0;
+              margin-left: 0;
+            "
+          />
+        </article>
+
+        <!-- Small Banners -->
+        <div class="small-banners">
+          <!-- Small 1 -->
+          <article
+            class="banner surface-cream-light animate__animated animate__fadeInUp animate__faster animate-delay-01s animate-disable-mobile p-24"
+          >
+            <a class="banner-link" href="/dogum-gunu-cicekleri">
+              <div class="content content-right">
+                <h3
+                  class="text-24 font-bold text-right content-brand content-right lh-110 animate__animated animate__fadeInDown animate__faster"
+                >
+                  Doğum Günü<br />Çiçekleri
+                </h3>
+                <div
+                  class="b-btn-small animate__animated animate__fadeInUp animate__faster animate-delay-03s"
+                >
+                  Bugün 90 Dakikada Gönder
+                </div>
+              </div>
+            </a>
+            <img
+              class="figure animate__animated animate__fadeInLeft animate__faster animate-delay-02s"
+              src="images_21temmuz/small-1.webp"
+              style="
+                margin-left: 0;
+                height: clamp(130px, calc(100vw * 205 / 1200), 205px);
+              "
+            />
+          </article>
+
+          <!-- Small 2 -->
+          <article
+            class="banner surface-cream-light animate__animated animate__fadeInUp animate__faster animate-delay-02s animate-disable-mobile p-24"
+          >
+            <a class="banner-link" href="/indirimli-cicekler">
+              <div class="content content-right">
+                <h3
+                  class="text-24 font-bold text-right content-brand content-right lh-110 animate__animated animate__fadeInDown animate__faster"
+                >
+                  Uygun Fiyatlı<br />Çiçekler
+                </h3>
+                <div
+                  class="b-btn-small animate__animated animate__fadeInUp animate__faster animate-delay-03s"
+                >
+                  Fiyatları İncele
+                </div>
+              </div>
+            </a>
+            <img
+              class="figure animate__animated animate__fadeInLeft animate__faster animate-delay-02s"
+              src="images_21temmuz/small-2.webp"
+              style="
+                margin-left: 0;
+                height: clamp(130px, calc(100vw * 205 / 1200), 205px);
+              "
+            />
+          </article>
+
+          <!-- Small 3 -->
+          <article
+            class="banner surface-cream-light animate__animated animate__fadeInUp animate__faster animate-delay-03s animate-disable-mobile p-24"
+          >
+            <a class="banner-link" href="/lilyum-zambak">
+              <div class="content content-right">
+                <h3
+                  class="text-24 font-bold content-brand text-right content-right lh-110 animate__animated animate__fadeInDown animate__faster"
+                >
+                  Favori<br />
+                  Lilyumlar
+                </h3>
+                <div
+                  class="b-btn-small animate__animated animate__fadeInUp animate__faster animate-delay-03s"
+                >
+                  Bugün 90 Dakikada Gönder
+                </div>
+              </div>
+            </a>
+            <img
+              class="figure animate__animated animate__fadeInLeft animate__faster animate-delay-02s"
+              src="images_21temmuz/small-3.webp"
+              style="
+                margin-left: 0;
+                height: clamp(130px, calc(100vw * 205 / 1200), 205px);
+              "
+            />
+          </article>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
