@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Eylül Kampanyası - Back To School</title>
+    <title>Eylül Kampanyası</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -31,30 +31,6 @@
         transform-origin: center bottom;
         will-change: transform;
         display: inline-block;
-      }
-
-      /* ── Wavy Ribbon ── */
-      .wavy-ribbon {
-        width: calc(100% + 72px);
-        margin-left: -36px;
-        position: relative;
-        z-index: 10;
-        pointer-events: none;
-        display: block;
-        overflow: visible;
-        margin-top: 0;
-        margin-bottom: 8px;
-      }
-      @media (max-width: 768px) {
-        .wavy-ribbon {
-          width: calc(100% + 32px);
-          margin-left: -16px;
-        }
-      }
-      .wavy-ribbon svg {
-        display: block;
-        width: 100%;
-        overflow: visible;
       }
 
       @media (max-width: 768px) {
@@ -90,9 +66,6 @@
         .code {
           height: 20px !important;
         }
-        .mobile-margin-top {
-          margin-top: 40px !important;
-        }
       }
     </style>
   </head>
@@ -116,7 +89,7 @@
           >
             <img
               class="label-loop mobile-label-size"
-              src="images_eylul/label.svg"
+              src="images_eylul2/label.svg"
             />
           </div>
           <a class="banner-link" href="/cicek">
@@ -124,112 +97,7 @@
               class="content content-center text-center"
               style="justify-content: space-between"
             >
-              <!-- Wavy Ribbon -->
-              <div
-                class="wavy-ribbon animate__animated animate__fadeInDown animate__faster"
-                style="position: absolute; left: 0; right: 0; top: -8px"
-              >
-                <svg
-                  viewBox="0 0 980 80"
-                  preserveAspectRatio="xMidYMid meet"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <defs>
-                    <!--
-                      The ribbon occupies a sinusoidal band.
-                      Top edge sine: y = 8  + 18*sin(x * 2π / 490)
-                      Bottom edge:   y = 72 + 18*sin(x * 2π / 490)
-                      Centre path:   y = 40 + 18*sin(x * 2π / 490)  ← text follows this
-                    -->
-
-                    <!-- Text follows this centre wave path. Extended far left so scroll looks seamless. -->
-                    <path
-                      id="wave-text-path"
-                      d="M-980,40 Q-857.5,22 -735,40 T-490,40 T-245,40 T0,40 Q122.5,22 245,40 T490,40 T735,40 T980,40 Q1102.5,22 1225,40 T1470,40 T1715,40 T1960,40"
-                      fill="none"
-                    />
-                  </defs>
-
-                  <!-- Ribbon fill (brand) -->
-                  <path
-                    d="M0,8 Q122.5,-10 245,8 T490,8 T735,8 T980,8
-                       L980,72 Q857.5,90 735,72 T490,72 T245,72 T0,72 Z"
-                    fill="#1e40af"
-                  />
-
-                  <!-- Gold top border -->
-                  <path
-                    d="M0,8 Q122.5,-10 245,8 T490,8 T735,8 T980,8"
-                    fill="none"
-                    stroke="#E1AA2C"
-                    stroke-width="3"
-                  />
-
-                  <path
-                    d="M0,72 Q122.5,54 245,72 T490,72 T735,72 T980,72"
-                    fill="none"
-                    stroke="#E1AA2C"
-                    stroke-width="3"
-                  />
-
-                  <text
-                    id="ribbon-text"
-                    font-family="Nunito, sans-serif"
-                    font-size="17"
-                    font-weight="800"
-                    letter-spacing="6"
-                    fill="#eaf1ff"
-                    dominant-baseline="middle"
-                  >
-                    <textPath
-                      id="ribbon-textpath"
-                      href="#wave-text-path"
-                      startOffset="0%"
-                    >
-                      BACK TO SCHOOL
-                      <tspan fill="#e1aa2c">●</tspan>
-                      BACK TO SCHOOL
-                      <tspan fill="#e1aa2c">●</tspan>
-                      BACK TO SCHOOL
-                      <tspan fill="#e1aa2c">●</tspan>
-                      BACK TO SCHOOL
-                      <tspan fill="#e1aa2c">●</tspan>
-                      BACK TO SCHOOL
-                      <tspan fill="#e1aa2c">●</tspan>
-                      BACK TO SCHOOL
-                      <tspan fill="#e1aa2c">●</tspan>
-                      BACK TO SCHOOL
-                      <tspan fill="#e1aa2c">●</tspan>
-                      BACK TO SCHOOL
-                      <tspan fill="#e1aa2c">●</tspan>
-                      BACK TO SCHOOL
-                      <tspan fill="#e1aa2c">●</tspan>
-                      BACK TO SCHOOL
-                      <tspan fill="#e1aa2c">●</tspan>
-                      BACK TO SCHOOL
-                      <tspan fill="#e1aa2c">●</tspan>
-                      BACK TO SCHOOL
-                      <tspan fill="#e1aa2c">●</tspan>
-                      BACK TO SCHOOL
-                      <tspan fill="#e1aa2c">●</tspan>
-                      BACK TO SCHOOL
-                      <tspan fill="#e1aa2c">●</tspan>
-                      BACK TO SCHOOL
-                      <tspan fill="#e1aa2c">●</tspan>
-                      BACK TO SCHOOL
-                      <tspan fill="#e1aa2c">●</tspan>
-                      BACK TO SCHOOL
-                      <tspan fill="#e1aa2c">●</tspan>
-                      BACK TO SCHOOL
-                      <tspan fill="#e1aa2c">●</tspan>
-                      BACK TO SCHOOL
-                      <tspan fill="#e1aa2c">●</tspan>
-                    </textPath>
-                  </text>
-                </svg>
-              </div>
-
-              <div class="row mt-96 mobile-margin-top">
+              <div class="row">
                 <div
                   class="animate__animated animate__fadeInDown animate__faster"
                   style="
@@ -239,10 +107,11 @@
                   "
                 >
                   <span
-                    class="text-24 font-bold content-brand pb-16"
-                    style="letter-spacing: var(--size-xxs); letter-spacing: 16%"
-                    >OKULA DÖNÜŞ İNDİRİMLERİ</span
-                  >
+                    class="text-24 font-semibold content-brand pb-16"
+                    style="letter-spacing: var(--size-xxs); letter-spacing: 20%"
+                    >EYLÜL'DE HERŞEY <br />
+                    <strong>BİR TAZE ÇİÇEKLE BAŞLAR</strong>
+                  </span>
                   <div
                     class="surface-brand pl-30 pr-30 pt-8 pb-8 radius-24"
                     style="display: flex; gap: clamp(8px, 0.81vw, 8px)"
@@ -400,8 +269,8 @@
           </a>
           <img
             class="figure animate__animated animate__slideInUp animate__faster animate-delay-02s"
-            src="images_eylul/slider-1-1.webp"
-            style="height: clamp(253px, calc(100vw * 378 / 1200), 378px)"
+            src="images_eylul2/slider-1-1.webp"
+            style="height: clamp(290px, calc(100vw * 420 / 1200), 420px)"
           />
         </article>
 
@@ -458,7 +327,7 @@
           </a>
           <img
             class="figure animate__animated animate__fadeInLeft animate__faster animate-delay-03s"
-            src="images_eylul/grid-1.webp"
+            src="images_eylul2/grid-1.webp"
             style="
               height: clamp(210px, calc(100vw * 317 / 1200), 317px);
               left: 0;
@@ -523,7 +392,7 @@
           </a>
           <img
             class="figure animate__animated animate__fadeInLeft animate__faster animate-delay-03s"
-            src="images_eylul/grid-2.webp"
+            src="images_eylul2/grid-2.webp"
             style="
               height: clamp(210px, calc(100vw * 317 / 1200), 317px);
               left: 0;
@@ -554,7 +423,7 @@
             </a>
             <img
               class="figure animate__animated animate__fadeInLeft animate__faster animate-delay-02s"
-              src="images_eylul/small-1.webp"
+              src="images_eylul2/small-1.webp"
               style="
                 margin-left: 0;
                 height: clamp(130px, calc(100vw * 205 / 1200), 205px);
@@ -582,7 +451,7 @@
             </a>
             <img
               class="figure animate__animated animate__fadeInLeft animate__faster animate-delay-02s"
-              src="images_eylul/small-2.webp"
+              src="images_eylul2/small-2.webp"
               style="
                 margin-left: 0;
                 height: clamp(130px, calc(100vw * 205 / 1200), 205px);
@@ -611,7 +480,7 @@
             </a>
             <img
               class="figure animate__animated animate__fadeInLeft animate__faster animate-delay-02s"
-              src="images_eylul/small-3.webp"
+              src="images_eylul2/small-3.webp"
               style="
                 margin-left: 0;
                 height: clamp(130px, calc(100vw * 205 / 1200), 205px);
@@ -706,51 +575,6 @@
           });
         });
       });
-    </script>
-    <script>
-      /* ── Wavy Ribbon: seamless infinite scroll ── */
-      (function () {
-        var textEl = document.getElementById("ribbon-text"); // <text> – has getComputedTextLength
-        var textPathEl = document.getElementById("ribbon-textpath"); // <textPath> – gets startOffset
-        var pathEl = document.getElementById("wave-text-path");
-        if (!textEl || !textPathEl || !pathEl) return;
-
-        var NUM_TOTAL = 20; // total repetitions of one "BACK TO SCHOOL ●" unit in markup
-        var pathLength = pathEl.getTotalLength(); // SVG user-units
-        var unitPx = 0; // width of one text unit in SVG user-units; measured after fonts load
-        var offsetPx = 0; // current scroll position
-        var last = null;
-        var speedPxPerMs = 0.05; // px per ms — lower = slower
-
-        function tick(ts) {
-          if (last !== null) {
-            offsetPx += speedPxPerMs * (ts - last);
-            // Modulo by exactly one unit — glitch-free seamless wrap
-            if (offsetPx >= unitPx) offsetPx -= unitPx;
-          }
-          last = ts;
-
-          textPathEl.setAttribute(
-            "startOffset",
-            (offsetPx / pathLength) * 100 + "%",
-          );
-          requestAnimationFrame(tick);
-        }
-
-        function start() {
-          // getComputedTextLength() works on <text>, NOT on <textPath>
-          var total = textEl.getComputedTextLength();
-          unitPx = total > 0 ? total / NUM_TOTAL : pathLength / NUM_TOTAL;
-          requestAnimationFrame(tick);
-        }
-
-        // Wait for web fonts so glyph widths are accurate before first measure
-        if (document.fonts && document.fonts.ready) {
-          document.fonts.ready.then(start);
-        } else {
-          window.addEventListener("load", start);
-        }
-      })();
     </script>
   </body>
 </html>
