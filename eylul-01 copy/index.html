@@ -1,0 +1,756 @@
+<!doctype html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Eylül Kampanyası - Back To School</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap"
+      rel="stylesheet"
+    />
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="../css/banner-main.css" />
+    <link rel="stylesheet" href="../css/animate.min.css" />
+    <style>
+      @keyframes label-float {
+        0% {
+          transform: translateY(0px) scale(1);
+        }
+        50% {
+          transform: translateY(-7px) scale(1.03);
+        }
+        100% {
+          transform: translateY(0px) scale(1);
+        }
+      }
+      .label-loop {
+        animation: label-float 3.6s ease-in-out infinite;
+        animation-delay: 0.6s;
+        transform-origin: center bottom;
+        will-change: transform;
+        display: inline-block;
+      }
+
+      /* ── Wavy Ribbon ── */
+      .wavy-ribbon {
+        width: calc(100% + 72px);
+        margin-left: -36px;
+        position: relative;
+        z-index: 10;
+        pointer-events: none;
+        display: block;
+        overflow: visible;
+        margin-top: 0;
+        margin-bottom: 8px;
+      }
+      @media (max-width: 768px) {
+        .wavy-ribbon {
+          width: calc(100% + 32px);
+          margin-left: -16px;
+        }
+      }
+      .wavy-ribbon svg {
+        display: block;
+        width: 100%;
+        overflow: visible;
+      }
+
+      @media (max-width: 768px) {
+        .mobile-label-size {
+          width: 120px !important;
+          height: 120px !important;
+        }
+        .offer-wrapper-mobile {
+          width: 100% !important;
+          gap: 8px !important;
+        }
+        .discount-code-wrapper {
+          width: 100% !important;
+        }
+        .offer-item-mobile-stack {
+          flex-direction: column !important;
+          justify-content: center !important;
+          gap: 2px !important;
+          width: 100% !important;
+          padding-left: 4px !important;
+          padding-right: 4px !important;
+          text-align: center;
+        }
+        .mobile-code-wrapper {
+          flex-direction: column !important;
+          height: auto !important;
+        }
+        .mobile-code-title {
+          background-color: #ead5a4 !important;
+          padding-top: 4px !important;
+          font-size: 10px !important;
+        }
+        .code {
+          height: 20px !important;
+        }
+        .mobile-margin-top {
+          margin-top: 40px !important;
+        }
+      }
+    </style>
+  </head>
+
+  <body style="margin: 10px">
+    <main
+      class="container"
+      style="max-width: 1480px; margin: auto; margin-bottom: 24px"
+    >
+      <section class="grid">
+        <!-- Hero -->
+        <article class="hero surface-cream-light p-36">
+          <div
+            class="animate__animated animate__fadeInUp animate__faster animate-delay-04s"
+            style="
+              position: absolute;
+              right: 0;
+              bottom: 0;
+              z-index: 999 !important;
+            "
+          >
+            <img
+              class="label-loop mobile-label-size"
+              src="images_eylul/label.svg"
+            />
+          </div>
+          <a class="banner-link" href="/cicek">
+            <div
+              class="content content-center text-center"
+              style="justify-content: space-between"
+            >
+              <!-- Wavy Ribbon -->
+              <div
+                class="wavy-ribbon animate__animated animate__fadeInDown animate__faster"
+                style="position: absolute; left: 0; right: 0; top: -8px"
+              >
+                <svg
+                  viewBox="0 0 980 80"
+                  preserveAspectRatio="xMidYMid meet"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <defs>
+                    <!--
+                      The ribbon occupies a sinusoidal band.
+                      Top edge sine: y = 8  + 18*sin(x * 2π / 490)
+                      Bottom edge:   y = 72 + 18*sin(x * 2π / 490)
+                      Centre path:   y = 40 + 18*sin(x * 2π / 490)  ← text follows this
+                    -->
+
+                    <!-- Text follows this centre wave path. Extended far left so scroll looks seamless. -->
+                    <path
+                      id="wave-text-path"
+                      d="M-980,40 Q-857.5,22 -735,40 T-490,40 T-245,40 T0,40 Q122.5,22 245,40 T490,40 T735,40 T980,40 Q1102.5,22 1225,40 T1470,40 T1715,40 T1960,40"
+                      fill="none"
+                    />
+                  </defs>
+
+                  <!-- Ribbon fill (brand) -->
+                  <path
+                    d="M0,8 Q122.5,-10 245,8 T490,8 T735,8 T980,8
+                       L980,72 Q857.5,90 735,72 T490,72 T245,72 T0,72 Z"
+                    fill="#1e40af"
+                  />
+
+                  <!-- Gold top border -->
+                  <path
+                    d="M0,8 Q122.5,-10 245,8 T490,8 T735,8 T980,8"
+                    fill="none"
+                    stroke="#E1AA2C"
+                    stroke-width="3"
+                  />
+
+                  <path
+                    d="M0,72 Q122.5,54 245,72 T490,72 T735,72 T980,72"
+                    fill="none"
+                    stroke="#E1AA2C"
+                    stroke-width="3"
+                  />
+
+                  <text
+                    id="ribbon-text"
+                    font-family="Nunito, sans-serif"
+                    font-size="17"
+                    font-weight="800"
+                    letter-spacing="6"
+                    fill="#eaf1ff"
+                    dominant-baseline="middle"
+                  >
+                    <textPath
+                      id="ribbon-textpath"
+                      href="#wave-text-path"
+                      startOffset="0%"
+                    >
+                      BACK TO SCHOOL
+                      <tspan fill="#e1aa2c">●</tspan>
+                      BACK TO SCHOOL
+                      <tspan fill="#e1aa2c">●</tspan>
+                      BACK TO SCHOOL
+                      <tspan fill="#e1aa2c">●</tspan>
+                      BACK TO SCHOOL
+                      <tspan fill="#e1aa2c">●</tspan>
+                      BACK TO SCHOOL
+                      <tspan fill="#e1aa2c">●</tspan>
+                      BACK TO SCHOOL
+                      <tspan fill="#e1aa2c">●</tspan>
+                      BACK TO SCHOOL
+                      <tspan fill="#e1aa2c">●</tspan>
+                      BACK TO SCHOOL
+                      <tspan fill="#e1aa2c">●</tspan>
+                      BACK TO SCHOOL
+                      <tspan fill="#e1aa2c">●</tspan>
+                      BACK TO SCHOOL
+                      <tspan fill="#e1aa2c">●</tspan>
+                      BACK TO SCHOOL
+                      <tspan fill="#e1aa2c">●</tspan>
+                      BACK TO SCHOOL
+                      <tspan fill="#e1aa2c">●</tspan>
+                      BACK TO SCHOOL
+                      <tspan fill="#e1aa2c">●</tspan>
+                      BACK TO SCHOOL
+                      <tspan fill="#e1aa2c">●</tspan>
+                      BACK TO SCHOOL
+                      <tspan fill="#e1aa2c">●</tspan>
+                      BACK TO SCHOOL
+                      <tspan fill="#e1aa2c">●</tspan>
+                      BACK TO SCHOOL
+                      <tspan fill="#e1aa2c">●</tspan>
+                      BACK TO SCHOOL
+                      <tspan fill="#e1aa2c">●</tspan>
+                      BACK TO SCHOOL
+                      <tspan fill="#e1aa2c">●</tspan>
+                    </textPath>
+                  </text>
+                </svg>
+              </div>
+
+              <div class="row mt-96 mobile-margin-top">
+                <div
+                  class="animate__animated animate__fadeInDown animate__faster"
+                  style="
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                  "
+                >
+                  <span
+                    class="text-24 font-bold content-brand pb-16"
+                    style="letter-spacing: var(--size-xxs); letter-spacing: 16%"
+                    >OKULA DÖNÜŞ İNDİRİMLERİ</span
+                  >
+                  <div
+                    class="surface-brand pl-30 pr-30 pt-8 pb-8 radius-24"
+                    style="display: flex; gap: clamp(8px, 0.81vw, 8px)"
+                  >
+                    <p
+                      class="content-cream"
+                      style="
+                        font-size: clamp(42px, 6.49vw, 64px);
+                        font-weight: 800 !important ;
+                        line-height: 0 !important ;
+                        margin: 0 !important;
+                        padding: 0 !important;
+                        display: flex;
+                        align-items: center;
+                      "
+                    >
+                      250 TL
+                    </p>
+                    <p
+                      class="content-cream"
+                      style="
+                        font-size: clamp(28px, 4.05vw, 32px);
+                        font-weight: 800 !important;
+                        display: flex;
+                        align-items: start;
+                        flex-direction: column;
+                        line-height: normal !important ;
+                        margin: 0 !important;
+                        padding: 0 !important;
+                      "
+                    >
+                      <span
+                        style="
+                          font-size: clamp(12px, 1.62vw, 16px);
+                          font-weight: 600;
+                          line-height: normal !important ;
+                        "
+                        >'ye varan</span
+                      >İndirimler
+                    </p>
+                  </div>
+                  <div
+                    style="
+                      gap: var(--size-m);
+                      display: flex;
+                      align-items: center;
+                      flex-direction: row;
+                    "
+                    class="mt-16 offer-wrapper-mobile"
+                  >
+                    <div class="discount-code-wrapper">
+                      <div
+                        class="surface-cream content-brand text-24 pt-4 pb-4 pl-12 pr-12 offer-item-mobile-stack"
+                        style="
+                          display: flex;
+                          align-items: center;
+                          gap: 4px;
+                          font-weight: 800 !important;
+                          border-radius: var(--size-m) var(--size-m) 0px 0px;
+                        "
+                      >
+                        <span class="text-14 font-regular content-black lh-110"
+                          >1.000 TL
+                          <span class="mobile-break">ve üzeri</span></span
+                        >75 TL
+                      </div>
+                      <div
+                        class="code-wrapper surface-cream-light mobile-code-wrapper"
+                        style="
+                          border: solid 1px var(--cream);
+                          display: flex;
+                          align-items: center;
+                          border-radius: 0px 0px var(--size-m) var(--size-m);
+                          overflow: hidden;
+                        "
+                      >
+                        <span
+                          class="surface-cream-light content-black text-12 font-bold mobile-code-title"
+                          style="width: 100%"
+                          >İndirim Kodu</span
+                        >
+                        <span
+                          class="code text-14 content-brand copy-code-btn"
+                          style="
+                            width: 100%;
+                            background-color: #ead5a4;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            height: 32px;
+                            font-weight: 800 !important;
+                          "
+                          >EYLUL75</span
+                        >
+                      </div>
+                    </div>
+
+                    <div class="discount-code-wrapper">
+                      <div
+                        class="surface-cream content-brand text-24 pt-4 pb-4 pl-12 pr-12 offer-item-mobile-stack"
+                        style="
+                          display: flex;
+                          align-items: center;
+                          gap: 4px;
+                          font-weight: 800 !important;
+                          border-radius: var(--size-m) var(--size-m) 0px 0px;
+                        "
+                      >
+                        <span class="text-14 font-regular content-black lh-110"
+                          >2.200 TL
+                          <span class="mobile-break">ve üzeri</span></span
+                        >250 TL
+                      </div>
+                      <div
+                        class="code-wrapper surface-cream-light mobile-code-wrapper"
+                        style="
+                          border: solid 1px var(--cream);
+                          display: flex;
+                          align-items: center;
+                          border-radius: 0px 0px var(--size-m) var(--size-m);
+                          overflow: hidden;
+                        "
+                      >
+                        <span
+                          class="surface-cream-light content-black text-12 font-bold mobile-code-title"
+                          style="width: 100%"
+                          >İndirim Kodu</span
+                        >
+                        <span
+                          class="code text-14 content-brand copy-code-btn"
+                          style="
+                            width: 100%;
+                            background-color: #ead5a4;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            height: 32px;
+                            font-weight: 800 !important;
+                          "
+                          >EYLUL250</span
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div
+                class="b-btn animate__animated animate__fadeInUp animate__faster animate-delay-03s"
+                style="position: relative"
+              >
+                Alışverişe Başla
+              </div>
+            </div>
+          </a>
+          <img
+            class="figure animate__animated animate__slideInUp animate__faster animate-delay-02s"
+            src="images_eylul/slider-1-1.webp"
+            style="height: clamp(253px, calc(100vw * 378 / 1200), 378px)"
+          />
+        </article>
+
+        <!-- Right Top -->
+        <article
+          class="grid-1 animate__animated animate__fadeInRight animate__faster animate-disable-mobile p-24 surface-cream-light"
+        >
+          <a class="banner-link" href="/cok-satanlar">
+            <div class="content content-left text-right content-right">
+              <h3
+                class="text-36 font-bold text-right content-right lh-110 animate__animated animate__fadeInDown animate__faster"
+                style="display: flex; flex-direction: column"
+              >
+                <span
+                  style="
+                    border-radius: 12px 0;
+                    background: var(--cream);
+                    display: flex;
+                    padding: 8px 12px;
+                    justify-content: center;
+                    align-items: center;
+                    color: var(--bn-blue);
+                    font-family: Nunito;
+                    font-size: var(--size-l);
+                    gap: 5px;
+                    font-style: normal;
+                    font-weight: 700 !important;
+                    line-height: normal;
+                    margin-bottom: var(--size-2xl);
+                    width: fit-content;
+                  "
+                >
+                  90 Dakikada Kapında</span
+                >
+                <span
+                  style="
+                    color: var(--bn-black);
+                    font-size: var(--size-3xl);
+                    line-height: normal !important;
+                    font-weight: 300;
+                    font-style: italic;
+                    margin-bottom: 4px;
+                  "
+                  >Çiçekler Taze,<br />Fırsatlar Büyük
+                </span>
+                Çok Satanlar
+              </h3>
+              <div
+                class="b-btn-small animate__animated animate__fadeInUp animate__faster animate-delay-03s"
+              >
+                Hemen İncele
+              </div>
+            </div>
+          </a>
+          <img
+            class="figure animate__animated animate__fadeInLeft animate__faster animate-delay-03s"
+            src="images_eylul/grid-1.webp"
+            style="
+              height: clamp(210px, calc(100vw * 317 / 1200), 317px);
+              left: 0;
+              margin-left: 0;
+            "
+          />
+        </article>
+
+        <!-- Right Bottom -->
+        <article
+          class="grid-2 animate__animated animate__fadeInRight animate__faster animate-delay-02s animate-disable-mobile p-24 surface-cream-light"
+        >
+          <a class="banner-link" href="/orkide">
+            <div
+              class="content content-left text-right content-right"
+              style="align-items: end !important"
+            >
+              <h3
+                class="text-36 font-bold text-right content-right lh-110 animate__animated animate__fadeInDown animate__faster"
+                style="display: flex; flex-direction: column"
+              >
+                <span
+                  style="
+                    border-radius: 12px 0;
+                    background: var(--cream);
+                    display: flex;
+                    padding: 8px 12px;
+                    justify-content: center;
+                    align-items: center;
+                    color: var(--bn-blue);
+                    font-family: Nunito;
+                    font-size: var(--size-l);
+                    gap: 5px;
+                    font-style: normal;
+                    font-weight: 700 !important;
+                    line-height: normal;
+                    margin-bottom: var(--size-2xl);
+                    width: fit-content;
+                  "
+                >
+                  En Çok Tercih Edilenler</span
+                >
+                <span
+                  style="
+                    color: var(--bn-black);
+                    font-size: var(--size-3xl);
+                    line-height: normal !important;
+                    font-weight: 300;
+                    font-style: italic;
+                    margin-bottom: 4px;
+                  "
+                  >Dalından Taptaze
+                </span>
+                Orkideler
+              </h3>
+              <div
+                class="b-btn-small animate__animated animate__fadeInUp animate__faster animate-delay-03s"
+              >
+                Hemen İncele
+              </div>
+            </div>
+          </a>
+          <img
+            class="figure animate__animated animate__fadeInLeft animate__faster animate-delay-03s"
+            src="images_eylul/grid-2.webp"
+            style="
+              height: clamp(210px, calc(100vw * 317 / 1200), 317px);
+              left: 0;
+              margin-left: 0;
+            "
+          />
+        </article>
+
+        <!-- Small Banners -->
+        <div class="small-banners">
+          <!-- Small 1 -->
+          <article
+            class="banner surface-cream-light animate__animated animate__fadeInUp animate__faster animate-delay-01s animate-disable-mobile p-24"
+          >
+            <a class="banner-link" href="/dogum-gunu-cicekleri">
+              <div class="content content-right">
+                <h3
+                  class="text-24 font-bold text-right content-brand content-right lh-110 animate__animated animate__fadeInDown animate__faster"
+                >
+                  Doğum Günü<br />Çiçekleri
+                </h3>
+                <div
+                  class="b-btn-small animate__animated animate__fadeInUp animate__faster animate-delay-03s"
+                >
+                  Bugün 90 Dakikada Gönder
+                </div>
+              </div>
+            </a>
+            <img
+              class="figure animate__animated animate__fadeInLeft animate__faster animate-delay-02s"
+              src="images_eylul/small-1.webp"
+              style="
+                margin-left: 0;
+                height: clamp(130px, calc(100vw * 205 / 1200), 205px);
+              "
+            />
+          </article>
+
+          <!-- Small 2 -->
+          <article
+            class="banner surface-cream-light animate__animated animate__fadeInUp animate__faster animate-delay-02s animate-disable-mobile p-24"
+          >
+            <a class="banner-link" href="/indirimli-cicekler">
+              <div class="content content-right">
+                <h3
+                  class="text-24 font-bold text-right content-brand content-right lh-110 animate__animated animate__fadeInDown animate__faster"
+                >
+                  Uygun Fiyatlı<br />Çiçekler
+                </h3>
+                <div
+                  class="b-btn-small animate__animated animate__fadeInUp animate__faster animate-delay-03s"
+                >
+                  Fiyatları İncele
+                </div>
+              </div>
+            </a>
+            <img
+              class="figure animate__animated animate__fadeInLeft animate__faster animate-delay-02s"
+              src="images_eylul/small-2.webp"
+              style="
+                margin-left: 0;
+                height: clamp(130px, calc(100vw * 205 / 1200), 205px);
+              "
+            />
+          </article>
+
+          <!-- Small 3 -->
+          <article
+            class="banner surface-cream-light animate__animated animate__fadeInUp animate__faster animate-delay-03s animate-disable-mobile p-24"
+          >
+            <a class="banner-link" href="/lilyum-zambak">
+              <div class="content content-right">
+                <h3
+                  class="text-24 font-bold content-brand text-right content-right lh-110 animate__animated animate__fadeInDown animate__faster"
+                >
+                  Favori<br />
+                  Lilyumlar
+                </h3>
+                <div
+                  class="b-btn-small animate__animated animate__fadeInUp animate__faster animate-delay-03s"
+                >
+                  Bugün 90 Dakikada Gönder
+                </div>
+              </div>
+            </a>
+            <img
+              class="figure animate__animated animate__fadeInLeft animate__faster animate-delay-02s"
+              src="images_eylul/small-3.webp"
+              style="
+                margin-left: 0;
+                height: clamp(130px, calc(100vw * 205 / 1200), 205px);
+              "
+            />
+          </article>
+        </div>
+      </section>
+    </main>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const codeEls = document.querySelectorAll(".copy-code-btn");
+        if (codeEls.length === 0) return;
+
+        codeEls.forEach((codeEl) => {
+          // Value
+          const codeValue = codeEl.textContent.trim();
+
+          // Utulities
+          codeEl.style.whiteSpace = "nowrap";
+          codeEl.style.display = "flex";
+          codeEl.style.overflow = "visible";
+          codeEl.style.cursor = "pointer";
+
+          // Tooltip
+          const tooltip = document.createElement("div");
+          tooltip.textContent = "Kopyala";
+          tooltip.style.position = "absolute";
+          tooltip.style.left = "50%";
+          tooltip.style.top = "100%";
+          tooltip.style.transform = "translate(-50%, 6px)";
+          tooltip.style.padding = "8px 12px";
+          tooltip.style.fontSize = "12px";
+          tooltip.style.lineHeight = "1";
+          tooltip.style.backgroundColor = "#292929";
+          tooltip.style.color = "#ffffff";
+          tooltip.style.borderRadius = "8px";
+          tooltip.style.whiteSpace = "nowrap";
+          tooltip.style.boxShadow = "0 2px 4px rgba(0,0,0,.15)";
+          tooltip.style.opacity = "0";
+          tooltip.style.pointerEvents = "none";
+          tooltip.style.transition = "opacity .15s ease-out";
+          tooltip.style.zIndex = "10";
+
+          codeEl.style.position = "relative";
+          codeEl.appendChild(tooltip);
+
+          codeEl.addEventListener("mouseenter", () => {
+            tooltip.style.opacity = "1";
+            const discountWrap = codeEl.closest(".discount");
+            if (discountWrap) discountWrap.style.overflow = "visible";
+          });
+
+          codeEl.addEventListener("mouseleave", () => {
+            tooltip.style.opacity = "0";
+            const discountWrap = codeEl.closest(".discount");
+            if (discountWrap) discountWrap.style.overflow = "hidden";
+          });
+
+          codeEl.addEventListener("click", (event) => {
+            event.stopPropagation();
+            event.preventDefault();
+            // Copy to clipbord
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+              navigator.clipboard.writeText(codeValue).catch(() => {});
+            }
+
+            const originalText = codeValue;
+            const originalBg = codeEl.style.backgroundColor;
+            const originalColor = codeEl.style.color;
+            const originalBorderColor = codeEl.style.borderColor;
+
+            // Copied
+            if (codeEl.firstChild) codeEl.firstChild.nodeValue = "Kopyalandı";
+            codeEl.style.backgroundColor = "#B7FFD6";
+            codeEl.style.borderColor = "#B7FFD6";
+            codeEl.style.color = "#168F4A";
+
+            // Text Update
+            codeEl.setAttribute("title", "Kopyalandı");
+            tooltip.textContent = "Kopyalandı";
+
+            // Delay
+            setTimeout(() => {
+              if (codeEl.firstChild) codeEl.firstChild.nodeValue = originalText;
+              codeEl.style.backgroundColor = originalBg;
+              codeEl.style.borderColor = originalBorderColor || "";
+              codeEl.style.color = originalColor;
+              codeEl.setAttribute("title", "Kopyala");
+              tooltip.textContent = "Kopyala";
+            }, 1500);
+          });
+        });
+      });
+    </script>
+    <script>
+      /* ── Wavy Ribbon: seamless infinite scroll ── */
+      (function () {
+        var textEl = document.getElementById("ribbon-text"); // <text> – has getComputedTextLength
+        var textPathEl = document.getElementById("ribbon-textpath"); // <textPath> – gets startOffset
+        var pathEl = document.getElementById("wave-text-path");
+        if (!textEl || !textPathEl || !pathEl) return;
+
+        var NUM_TOTAL = 20; // total repetitions of one "BACK TO SCHOOL ●" unit in markup
+        var pathLength = pathEl.getTotalLength(); // SVG user-units
+        var unitPx = 0; // width of one text unit in SVG user-units; measured after fonts load
+        var offsetPx = 0; // current scroll position
+        var last = null;
+        var speedPxPerMs = 0.05; // px per ms — lower = slower
+
+        function tick(ts) {
+          if (last !== null) {
+            offsetPx += speedPxPerMs * (ts - last);
+            // Modulo by exactly one unit — glitch-free seamless wrap
+            if (offsetPx >= unitPx) offsetPx -= unitPx;
+          }
+          last = ts;
+
+          textPathEl.setAttribute(
+            "startOffset",
+            (offsetPx / pathLength) * 100 + "%",
+          );
+          requestAnimationFrame(tick);
+        }
+
+        function start() {
+          // getComputedTextLength() works on <text>, NOT on <textPath>
+          var total = textEl.getComputedTextLength();
+          unitPx = total > 0 ? total / NUM_TOTAL : pathLength / NUM_TOTAL;
+          requestAnimationFrame(tick);
+        }
+
+        // Wait for web fonts so glyph widths are accurate before first measure
+        if (document.fonts && document.fonts.ready) {
+          document.fonts.ready.then(start);
+        } else {
+          window.addEventListener("load", start);
+        }
+      })();
+    </script>
+  </body>
+</html>
