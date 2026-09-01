@@ -1,0 +1,581 @@
+<!doctype html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Taze Çiçek – Okula Dönüş Hello Bar</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,600;0,700;0,800;0,900;1,400;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        background: #ffffff;
+        font-family: "Nunito", sans-serif;
+        padding-top: 100px;
+      }
+
+      /* ── HELLO BAR ── */
+      .hello-bar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100px;
+        background: #fff3d7;
+        z-index: 9999;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        user-select: none;
+      }
+
+      .bar-inner {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        height: 76px;
+        position: relative;
+        z-index: 2;
+      }
+
+      /* ── Star + Text ── */
+      .bar-left {
+        display: flex;
+        align-items: center;
+        gap: 0;
+        flex-shrink: 0;
+      }
+
+      .bar-text {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        flex-shrink: 0;
+      }
+      .bar-text .t1 {
+        font-size: 26px;
+        font-weight: 900;
+        color: #003ca6;
+        line-height: 1.1;
+        white-space: nowrap;
+      }
+      .bar-text .t2 {
+        font-size: 32px;
+        font-weight: 900;
+        color: #003ca6;
+        line-height: 1.1;
+        white-space: nowrap;
+      }
+
+      /* ── Discount Badge ── */
+      .bar-badge {
+        background: #003ca6;
+        border-radius: 20px;
+        padding: 0 24px;
+        height: 68px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        flex-shrink: 0;
+      }
+      .badge-main {
+        font-size: 52px;
+        font-weight: 800;
+        color: #e1aa2c;
+        line-height: 1;
+        letter-spacing: -1px;
+        white-space: nowrap;
+      }
+      .badge-sub {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+      }
+      .badge-sub .s1 {
+        font-size: 16px;
+        font-weight: 400;
+        color: #e1aa2c;
+        white-space: nowrap;
+        line-height: 1;
+      }
+      .badge-sub .s2 {
+        font-size: 24px;
+        font-weight: 800;
+        color: #e1aa2c;
+        white-space: nowrap;
+        line-height: 1;
+      }
+
+      /* ── CAROUSEL ──
+       Viewport = 100px (full bar height) with overflow:hidden.
+       3 cards + 2 clones, each ~40px, gap 7px → step ~47px.
+       Bar center (50px) aligns with active card center.
+       Inactive cards above/below are visible within the 100px window
+       and are blurred + faded. Top/bottom fade masks blend them.
+    */
+      .carousel-vp {
+        position: relative;
+        height: 100px;
+        overflow: hidden;
+        flex-shrink: 0;
+        /* Horizontal padding so scale(1.05) doesn't get clipped on the sides */
+        padding: 0 8px;
+        /* Negative margin to keep total width unchanged */
+        margin: 0 -8px;
+      }
+
+      /* Fade top/bottom into bar background */
+      .carousel-vp::before,
+      .carousel-vp::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        height: 22px;
+        z-index: 3;
+        pointer-events: none;
+      }
+      .carousel-vp::before {
+        top: 0;
+        background: linear-gradient(
+          to bottom,
+          #fff3d7 0%,
+          rgba(255, 243, 215, 0) 100%
+        );
+      }
+      .carousel-vp::after {
+        bottom: 0;
+        background: linear-gradient(
+          to top,
+          #fff3d7 0%,
+          rgba(255, 243, 215, 0) 100%
+        );
+      }
+
+      .offer-track {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 7px;
+        will-change: transform;
+      }
+
+      .offer-card {
+        background: #e1aa2c;
+        border-radius: 12px;
+        padding: 9px 14px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        flex-shrink: 0;
+        white-space: nowrap;
+        transition:
+          opacity 0.48s ease,
+          filter 0.48s ease,
+          transform 0.48s cubic-bezier(0.34, 1.56, 0.64, 1);
+      }
+
+      .offer-card.is-active {
+        opacity: 1;
+        filter: blur(0px);
+        transform: scale(1.05);
+      }
+
+      .offer-card.is-inactive {
+        opacity: 0.5;
+        filter: blur(2.5px);
+        transform: scale(0.88);
+      }
+
+      .card-cond {
+        font-size: 16px;
+        font-weight: 600;
+        font-style: italic;
+        color: #292929;
+      }
+      .card-amt {
+        font-size: 24px;
+        font-weight: 900;
+        color: #003ca6;
+      }
+
+      /* ── Wavy Ribbon (inside hello-bar) ── */
+      .bar-wavy-ribbon {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 100%;
+        pointer-events: none;
+        z-index: 1; /* behind all bar content */
+        overflow: hidden;
+        opacity: 0.9;
+      }
+      .bar-wavy-ribbon svg {
+        display: block;
+        width: 100%;
+        overflow: visible;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="hello-bar" id="helloBar">
+      <!-- Wavy Ribbon Background -->
+      <div class="bar-wavy-ribbon" aria-hidden="true">
+        <svg
+          viewBox="0 0 1440 40"
+          preserveAspectRatio="xMidYMid meet"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <defs>
+            <!-- Text follows centre wave (y=20), same phase as band -->
+            <path
+              id="hb-wave-text-path"
+              d="M-1440,20 Q-1320,12 -1200,20 T-960,20 T-720,20 T-480,20 T-240,20 T0,20 T240,20 T480,20 T720,20 T960,20 T1200,20 T1440,20 T1680,20 T1920,20 T2160,20 T2400,20 T2640,20 T2880,20 T3120,20 T3360,20"
+              fill="none"
+            />
+          </defs>
+
+          <!-- Ribbon fill — top LTR then bottom RTL -->
+          <path
+            d="M0,6 Q120,-2 240,6 T480,6 T720,6 T960,6 T1200,6 T1440,6
+               L1440,34 Q1320,42 1200,34 Q1080,26 960,34 Q840,42 720,34
+               Q600,26 480,34 Q360,42 240,34 Q120,26 0,34 Z"
+            fill="#003ca6"
+          />
+
+          <!-- Gold top border -->
+          <path
+            d="M0,6 Q120,-2 240,6 T480,6 T720,6 T960,6 T1200,6 T1440,6"
+            fill="none"
+            stroke="#E1AA2C"
+            stroke-width="2"
+          />
+
+          <!-- Gold bottom border -->
+          <path
+            d="M0,34 Q120,26 240,34 T480,34 T720,34 T960,34 T1200,34 T1440,34"
+            fill="none"
+            stroke="#E1AA2C"
+            stroke-width="2"
+          />
+
+          <text
+            id="hb-ribbon-text"
+            font-family="Nunito, sans-serif"
+            font-size="12"
+            font-weight="800"
+            letter-spacing="5"
+            fill="#c8d9ff"
+            dominant-baseline="middle"
+          >
+            <textPath
+              id="hb-ribbon-textpath"
+              href="#hb-wave-text-path"
+              startOffset="0%"
+            >
+              BACK TO SCHOOL
+              <tspan fill="#e1aa2c">●</tspan>
+              BACK TO SCHOOL
+              <tspan fill="#e1aa2c">●</tspan>
+              BACK TO SCHOOL
+              <tspan fill="#e1aa2c">●</tspan>
+              BACK TO SCHOOL
+              <tspan fill="#e1aa2c">●</tspan>
+              BACK TO SCHOOL
+              <tspan fill="#e1aa2c">●</tspan>
+              BACK TO SCHOOL
+              <tspan fill="#e1aa2c">●</tspan>
+              BACK TO SCHOOL
+              <tspan fill="#e1aa2c">●</tspan>
+              BACK TO SCHOOL
+              <tspan fill="#e1aa2c">●</tspan>
+              BACK TO SCHOOL
+              <tspan fill="#e1aa2c">●</tspan>
+              BACK TO SCHOOL
+              <tspan fill="#e1aa2c">●</tspan>
+              BACK TO SCHOOL
+              <tspan fill="#e1aa2c">●</tspan>
+              BACK TO SCHOOL
+              <tspan fill="#e1aa2c">●</tspan>
+              BACK TO SCHOOL
+              <tspan fill="#e1aa2c">●</tspan>
+              BACK TO SCHOOL
+              <tspan fill="#e1aa2c">●</tspan>
+              BACK TO SCHOOL
+              <tspan fill="#e1aa2c">●</tspan>
+              BACK TO SCHOOL
+              <tspan fill="#e1aa2c">●</tspan>
+              BACK TO SCHOOL
+              <tspan fill="#e1aa2c">●</tspan>
+              BACK TO SCHOOL
+              <tspan fill="#e1aa2c">●</tspan>
+              BACK TO SCHOOL
+              <tspan fill="#e1aa2c">●</tspan>
+              BACK TO SCHOOL
+              <tspan fill="#e1aa2c">●</tspan>
+            </textPath>
+          </text>
+        </svg>
+      </div>
+
+      <div class="bar-inner">
+        <!-- Text -->
+        <div class="bar-text">
+          <span class="t1">OKULA DÖNÜŞ</span>
+          <span class="t2">İNDİRİMLERİ</span>
+        </div>
+
+        <!-- Discount Badge -->
+        <div class="bar-badge">
+          <span class="badge-main">250 TL</span>
+          <div class="badge-sub">
+            <span class="s1">'ye varan</span>
+            <span class="s2">İndirimler</span>
+          </div>
+        </div>
+
+        <!-- Offer Carousel -->
+        <div class="carousel-vp" id="carouselVP">
+          <div class="offer-track" id="offerTrack">
+            <!-- [0] Clone of real[1] (seamless backwards loop) -->
+            <div class="offer-card is-inactive" aria-hidden="true">
+              <span class="card-cond">2.200 TL ve üzeri</span>
+              <span class="card-amt">250 TL</span>
+            </div>
+
+            <!-- [1] real[0] -->
+            <div class="offer-card is-active" data-real="0">
+              <span class="card-cond">1.000 TL ve üzeri</span>
+              <span class="card-amt">75 TL</span>
+            </div>
+
+            <!-- [2] real[1] -->
+            <div class="offer-card is-inactive" data-real="1">
+              <span class="card-cond">2.200 TL ve üzeri</span>
+              <span class="card-amt">250 TL</span>
+            </div>
+
+            <!-- [3] Clone of real[0] (seamless forward loop) -->
+            <div class="offer-card is-inactive" aria-hidden="true">
+              <span class="card-cond">1.000 TL ve üzeri</span>
+              <span class="card-amt">75 TL</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      (function () {
+        "use strict";
+
+        var REAL_COUNT = 2;
+        var HOLD_MS = 1700;
+        var EASE_MS = 520;
+        var GAP = 7;
+
+        var vp = document.getElementById("carouselVP");
+        var track = document.getElementById("offerTrack");
+        var cards = Array.from(track.querySelectorAll(".offer-card"));
+        // [0]=clone(-1), [1..2]=real, [3]=clone(2)
+
+        var currentReal = 0;
+        var locked = false;
+        var timerID = null;
+
+        var CARD_H = 0;
+        var STEP = 0;
+        var VP_MID = 0; // = vp.offsetHeight / 2 = 50px
+
+        function measure() {
+          CARD_H = cards[1].offsetHeight;
+          STEP = CARD_H + GAP;
+          VP_MID = vp.offsetHeight / 2; // 50
+        }
+
+        // Y so card[arrayIdx] center sits at VP_MID
+        function yFor(idx) {
+          return VP_MID - (idx * STEP + CARD_H / 2);
+        }
+
+        function moveTo(idx, animate) {
+          track.style.transition = animate
+            ? "transform " + EASE_MS + "ms cubic-bezier(0.34,1.48,0.64,1)"
+            : "none";
+          track.style.transform = "translateY(" + yFor(idx) + "px)";
+        }
+
+        function applyStates(activeIdx) {
+          cards.forEach(function (c, i) {
+            c.classList.toggle("is-active", i === activeIdx);
+            c.classList.toggle("is-inactive", i !== activeIdx);
+          });
+        }
+
+        function advance() {
+          if (locked) return;
+          locked = true;
+
+          var nextReal = (currentReal + 1) % REAL_COUNT;
+          var nextArr = nextReal + 1;
+
+          if (currentReal === REAL_COUNT - 1) {
+            // Last → slide to clone[REAL_COUNT+1], snap to real[1]
+            moveTo(REAL_COUNT + 1, true);
+            applyStates(REAL_COUNT + 1);
+            setTimeout(function () {
+              // 1) Kart transition'larını kapat — flash önlenir
+              cards.forEach(function (c) {
+                c.style.transition = "none";
+              });
+              // 2) Track'i sessizce snap et
+              moveTo(1, false);
+              // 3) Active class'ı geç — transition yok, flash yok
+              applyStates(1);
+              // 4) Reflow'u zorla (değişiklikler hemen işlensin)
+              void track.offsetHeight;
+              // 5) 2 frame sonra transition'ları geri aç
+              requestAnimationFrame(function () {
+                requestAnimationFrame(function () {
+                  cards.forEach(function (c) {
+                    c.style.transition = "";
+                  });
+                  currentReal = 0;
+                  locked = false;
+                });
+              });
+            }, EASE_MS + 80);
+          } else {
+            moveTo(nextArr, true);
+            applyStates(nextArr);
+            currentReal = nextReal;
+            setTimeout(function () {
+              locked = false;
+            }, EASE_MS + 80);
+          }
+        }
+
+        function init() {
+          measure();
+          moveTo(1, false);
+          applyStates(1);
+          currentReal = 0;
+          if (!timerID) timerID = setInterval(advance, HOLD_MS);
+        }
+
+        if (document.readyState === "complete") {
+          setTimeout(init, 120);
+        } else {
+          window.addEventListener("load", function () {
+            setTimeout(init, 120);
+          });
+        }
+      })();
+    </script>
+
+    <script>
+      /* ── Hello Bar Wavy Ribbon: seamless infinite scroll ── */
+      (function () {
+        var textEl = document.getElementById("hb-ribbon-text");
+        var textPathEl = document.getElementById("hb-ribbon-textpath");
+        var pathEl = document.getElementById("hb-wave-text-path");
+        if (!textEl || !textPathEl || !pathEl) return;
+
+        var NUM_TOTAL = 20;
+        var pathLength = pathEl.getTotalLength();
+        var unitPx = 0;
+        var offsetPx = 0;
+        var last = null;
+        var speedPxPerMs = 0.05;
+
+        function tick(ts) {
+          if (last !== null) {
+            offsetPx += speedPxPerMs * (ts - last);
+            if (offsetPx >= unitPx) offsetPx -= unitPx;
+          }
+          last = ts;
+          textPathEl.setAttribute(
+            "startOffset",
+            (offsetPx / pathLength) * 100 + "%",
+          );
+          requestAnimationFrame(tick);
+        }
+
+        function start() {
+          var total = textEl.getComputedTextLength();
+          unitPx = total > 0 ? total / NUM_TOTAL : pathLength / NUM_TOTAL;
+          requestAnimationFrame(tick);
+        }
+
+        if (document.fonts && document.fonts.ready) {
+          document.fonts.ready.then(start);
+        } else {
+          window.addEventListener("load", start);
+        }
+      })();
+    </script>
+
+    <script>
+      /* ── Ribbon mask: align fade to actual content edges ── */
+      (function () {
+        var bar = document.getElementById("helloBar");
+        var inner = bar.querySelector(".bar-inner");
+        var ribbon = bar.querySelector(".bar-wavy-ribbon");
+        if (!bar || !inner || !ribbon) return;
+
+        var FADE_PX = 48; // soft fade width in pixels
+
+        function applyMask() {
+          var barW = bar.offsetWidth;
+          var left = inner.offsetLeft; // px from bar left edge
+          var right = left + inner.offsetWidth; // px from bar left edge
+
+          // Convert to %
+          var l0 = (((left - FADE_PX) / barW) * 100).toFixed(2);
+          var l1 = ((left / barW) * 100).toFixed(2);
+          var r0 = ((right / barW) * 100).toFixed(2);
+          var r1 = (((right + FADE_PX) / barW) * 100).toFixed(2);
+
+          var grad =
+            "linear-gradient(to right," +
+            "  black 0%," +
+            "  black " +
+            l0 +
+            "%," +
+            "  transparent " +
+            l1 +
+            "%," +
+            "  transparent " +
+            r0 +
+            "%," +
+            "  black " +
+            r1 +
+            "%," +
+            "  black 100%)";
+
+          ribbon.style.webkitMaskImage = grad;
+          ribbon.style.maskImage = grad;
+        }
+
+        window.addEventListener("load", applyMask);
+        window.addEventListener("resize", applyMask);
+        // Also run after a tick so layout is settled
+        setTimeout(applyMask, 50);
+      })();
+    </script>
+  </body>
+</html>
