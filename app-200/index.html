@@ -1,0 +1,670 @@
+<!doctype html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>APP200 Kampanyası</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap"
+      rel="stylesheet"
+    />
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="../css/banner-main.css" />
+    <link rel="stylesheet" href="../css/animate.min.css" />
+    <style>
+      @keyframes label-float {
+        0% {
+          transform: translateY(0px) scale(1);
+        }
+        50% {
+          transform: translateY(-7px) scale(1.03);
+        }
+        100% {
+          transform: translateY(0px) scale(1);
+        }
+      }
+      .label-loop {
+        animation: label-float 3.6s ease-in-out infinite;
+        animation-delay: 0.6s;
+        transform-origin: center bottom;
+        will-change: transform;
+        display: inline-block;
+      }
+
+      .mobile-label-size {
+        width: clamp(100px, 13.65vw, 202px);
+        height: clamp(100px, 13.65vw, 202px);
+      }
+
+      .app200-background {
+        position: absolute;
+        bottom: 0;
+        left: 54%;
+        z-index: 1;
+        width: 155%;
+        aspect-ratio: 3715 / 4095;
+        transform: translate(-50%, 33%);
+        pointer-events: none;
+      }
+
+      .app200-background img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .app200-copy {
+        position: absolute;
+        top: -1px;
+        right: 0;
+        left: 0;
+        z-index: 3;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .app200-vector-headline {
+        position: relative;
+        width: min(359px, calc(100% - 24px));
+        aspect-ratio: 399 / 223;
+      }
+
+      .app200-app-intro {
+        display: block;
+        width: min(459px, calc(100% - 16px));
+        height: auto;
+        margin-bottom: 16px;
+      }
+
+      .app200-vector-headline img {
+        position: absolute;
+        display: block;
+        height: auto;
+      }
+
+      .app200-vector-kicker {
+        top: 0;
+        left: 18.05%;
+        width: 63.91%;
+      }
+
+      .app200-vector-amount {
+        top: 28.7%;
+        left: 0;
+        width: 100%;
+      }
+
+      .app200-vector-discount {
+        top: 79.82%;
+        left: 27.07%;
+        width: 45.86%;
+      }
+
+      .app200-coupon-action {
+        position: relative;
+        display: flex;
+        width: min(235px, 59%);
+        margin-top: 32px;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .app200-coupon-action img,
+      .app200-note {
+        display: block;
+        width: 100%;
+        height: auto;
+      }
+
+      .app200-note {
+        width: min(200px, 50.13%);
+        margin-top: 5px;
+      }
+
+      .app200-cta-shell {
+        position: absolute;
+        right: 0;
+        bottom: 4px;
+        left: 0;
+        z-index: 4;
+        display: flex;
+        justify-content: center;
+      }
+
+      .app200-cta {
+        position: relative !important;
+        width: 200px;
+        text-align: center;
+      }
+
+      .app200-cta-mobile-tablet {
+        display: none;
+      }
+
+      @media (max-width: 768px) {
+        .mobile-label-size {
+          width: clamp(82px, 16vw, 100px) !important;
+          height: clamp(82px, 16vw, 100px) !important;
+        }
+        .offer-wrapper-mobile {
+          width: 100% !important;
+          gap: 8px !important;
+        }
+        .discount-code-wrapper {
+          width: 100% !important;
+        }
+        .offer-item-mobile-stack {
+          flex-direction: column !important;
+          justify-content: center !important;
+          gap: 2px !important;
+          width: 100% !important;
+          padding-left: 4px !important;
+          padding-right: 4px !important;
+          text-align: center;
+        }
+        .mobile-code-wrapper {
+          flex-direction: column !important;
+          height: auto !important;
+        }
+        .mobile-code-title {
+          background-color: #ead5a4 !important;
+          padding-top: 4px !important;
+          font-size: 10px !important;
+        }
+        .code {
+          height: 20px !important;
+        }
+
+        .app200-copy {
+          top: 3px;
+        }
+
+        .app200-background {
+          left: 60%;
+          width: 300%;
+          transform: translate(-50%, 32%);
+        }
+
+        .app200-vector-headline {
+          width: min(359px, calc(100% - 16px));
+        }
+
+        .app200-app-intro {
+          margin-bottom: clamp(10px, 2vw, 16px);
+        }
+
+        .app200-coupon-action {
+          margin-top: clamp(18px, 5vw, 28px);
+        }
+
+        .app200-cta-shell {
+          bottom: 24px;
+        }
+
+        .app200-cta {
+          width: min(200px, 58vw);
+        }
+      }
+
+      @media (max-width: 1024px) {
+        .app200-cta-desktop {
+          display: none;
+        }
+
+        .app200-cta-mobile-tablet {
+          display: inline;
+        }
+      }
+
+      @media (min-width: 476px) and (max-width: 768px) {
+        .hero {
+          min-height: 546px;
+        }
+
+        .app200-background {
+          width: min(260%, 1050px);
+          transform: translate(-50%, 35%);
+        }
+
+        .app200-app-intro {
+          width: min(410px, 68vw);
+          margin-bottom: clamp(10px, 2vw, 15px);
+        }
+
+        .app200-vector-headline {
+          width: min(320px, 52vw);
+        }
+
+        .app200-coupon-action {
+          width: min(210px, 35vw);
+          margin-top: clamp(18px, 4vw, 24px);
+        }
+
+        .app200-note {
+          width: min(180px, 30vw);
+        }
+      }
+
+      @media (min-width: 769px) and (max-width: 1024px) {
+        .mobile-label-size {
+          width: clamp(96px, 13vw, 132px) !important;
+          height: clamp(96px, 13vw, 132px) !important;
+        }
+
+        .app200-background {
+          left: 60%;
+          width: min(210%, 1000px);
+          transform: translate(-50%, 35%);
+        }
+
+        .app200-app-intro {
+          width: min(380px, 45vw);
+          margin-bottom: 12px;
+        }
+
+        .app200-vector-headline {
+          width: min(300px, 34vw);
+        }
+
+        .app200-coupon-action {
+          width: min(200px, 23vw);
+          margin-top: clamp(18px, 2.4vw, 24px);
+        }
+
+        .app200-note {
+          width: min(170px, 20vw);
+        }
+      }
+    </style>
+  </head>
+
+  <body style="margin: 10px">
+    <main
+      class="container"
+      style="max-width: 1480px; margin: auto; margin-bottom: 24px"
+    >
+      <section class="grid">
+        <!-- Hero -->
+        <article class="hero p-36" style="background: #e7f0ff">
+          <div
+            class="animate__animated animate__fadeInUp animate__faster animate-delay-04s"
+            style="
+              position: absolute;
+              right: 0;
+              bottom: 0;
+              z-index: 999 !important;
+            "
+          >
+            <img
+              class="label-loop mobile-label-size"
+              src="images_eylul2/label.svg"
+              alt="En geç 60-90 dakikada kapında"
+            />
+          </div>
+          <div class="app200-background">
+            <img
+              class="animate__animated animate__slideInUp animate__faster animate-delay-02s"
+              src="images_eylul2/app200-hero.png"
+              alt="Dört farklı çiçek aranjmanı"
+            />
+          </div>
+          <a class="banner-link" href="/cicek">
+            <div class="app200-copy animate__animated animate__fadeInDown animate__faster">
+              <img
+                class="app200-app-intro"
+                src="images_eylul2/app200-app-intro.svg"
+                alt="Taze Çiçek mobil uygulamasından yapacağın"
+              />
+              <div class="app200-vector-headline" aria-label="İlk siparişine 200 TL indirim">
+                <img
+                  class="app200-vector-kicker"
+                  src="images_eylul2/app200-heading-kicker.svg"
+                  alt=""
+                />
+                <img
+                  class="app200-vector-amount"
+                  src="images_eylul2/app200-heading-amount.svg"
+                  alt=""
+                />
+                <img
+                  class="app200-vector-discount"
+                  src="images_eylul2/app200-heading-discount.svg"
+                  alt=""
+                />
+              </div>
+              <span
+                class="app200-coupon-action copy-code-btn"
+                data-copy-code="APP200"
+                aria-label="Kupon kodu APP200. Kopyalamak için tıklayın."
+              >
+                <img src="images_eylul2/app200-coupon.svg" alt="" />
+              </span>
+              <img
+                class="app200-note"
+                src="images_eylul2/app200-note.svg"
+                alt="1000 TL ve üzeri alışverişlerde geçerlidir."
+              />
+            </div>
+
+            <div class="app200-cta-shell">
+              <div
+                class="app200-cta b-btn animate__animated animate__fadeInUp animate__faster animate-delay-03s"
+              >
+                <span class="app200-cta-desktop">Alışverişe Başla</span>
+                <span class="app200-cta-mobile-tablet">Uygulamayı İndir</span>
+              </div>
+            </div>
+          </a>
+        </article>
+
+        <!-- Right Top -->
+        <article
+          class="grid-1 animate__animated animate__fadeInRight animate__faster animate-disable-mobile p-24 surface-brand-light"
+        >
+          <a class="banner-link" href="/cok-satanlar">
+            <div class="content content-left text-right content-right">
+              <h3
+                class="text-36 font-bold text-right content-right lh-110 animate__animated animate__fadeInDown animate__faster"
+                style="display: flex; flex-direction: column"
+              >
+                <span
+                  style="
+                    border-radius: 12px 0;
+                    background: var(--cream);
+                    display: flex;
+                    padding: 8px 12px;
+                    justify-content: center;
+                    align-items: center;
+                    color: var(--bn-blue);
+                    font-family: Nunito;
+                    font-size: var(--size-l);
+                    gap: 5px;
+                    font-style: normal;
+                    font-weight: 700 !important;
+                    line-height: normal;
+                    margin-bottom: var(--size-2xl);
+                    width: fit-content;
+                  "
+                >
+                  90 Dakikada Kapında</span
+                >
+                <span
+                  style="
+                    color: var(--bn-black);
+                    font-size: var(--size-3xl);
+                    line-height: normal !important;
+                    font-weight: 300;
+                    font-style: italic;
+                    margin-bottom: 4px;
+                  "
+                  >Çiçekler Taze,<br />Fırsatlar Büyük
+                </span>
+                Çok Satanlar
+              </h3>
+              <div
+                class="b-btn-small animate__animated animate__fadeInUp animate__faster animate-delay-03s"
+              >
+                Hemen İncele
+              </div>
+            </div>
+          </a>
+          <img
+            class="figure animate__animated animate__fadeInLeft animate__faster animate-delay-03s"
+            src="images_eylul2/grid-1.webp"
+            style="
+              height: clamp(210px, calc(100vw * 317 / 1200), 317px);
+              left: 0;
+              margin-left: 0;
+            "
+          />
+        </article>
+
+        <!-- Right Bottom -->
+        <article
+          class="grid-2 animate__animated animate__fadeInRight animate__faster animate-delay-02s animate-disable-mobile p-24 surface-brand-light"
+        >
+          <a class="banner-link" href="/orkide">
+            <div
+              class="content content-left text-right content-right"
+              style="align-items: end !important"
+            >
+              <h3
+                class="text-36 font-bold text-right content-right lh-110 animate__animated animate__fadeInDown animate__faster"
+                style="display: flex; flex-direction: column"
+              >
+                <span
+                  style="
+                    border-radius: 12px 0;
+                    background: var(--cream);
+                    display: flex;
+                    padding: 8px 12px;
+                    justify-content: center;
+                    align-items: center;
+                    color: var(--bn-blue);
+                    font-family: Nunito;
+                    font-size: var(--size-l);
+                    gap: 5px;
+                    font-style: normal;
+                    font-weight: 700 !important;
+                    line-height: normal;
+                    margin-bottom: var(--size-2xl);
+                    width: fit-content;
+                  "
+                >
+                  En Çok Tercih Edilenler</span
+                >
+                <span
+                  style="
+                    color: var(--bn-black);
+                    font-size: var(--size-3xl);
+                    line-height: normal !important;
+                    font-weight: 300;
+                    font-style: italic;
+                    margin-bottom: 4px;
+                  "
+                  >Dalından Taptaze
+                </span>
+                Orkideler
+              </h3>
+              <div
+                class="b-btn-small animate__animated animate__fadeInUp animate__faster animate-delay-03s"
+              >
+                Hemen İncele
+              </div>
+            </div>
+          </a>
+          <img
+            class="figure animate__animated animate__fadeInLeft animate__faster animate-delay-03s"
+            src="images_eylul2/grid-2.webp"
+            style="
+              height: clamp(210px, calc(100vw * 317 / 1200), 317px);
+              left: 0;
+              margin-left: 0;
+            "
+          />
+        </article>
+
+        <!-- Small Banners -->
+        <div class="small-banners">
+          <!-- Small 1 -->
+          <article
+            class="banner surface-brand-light animate__animated animate__fadeInUp animate__faster animate-delay-01s animate-disable-mobile p-24"
+          >
+            <a class="banner-link" href="/dogum-gunu-cicekleri">
+              <div class="content content-right">
+                <h3
+                  class="text-24 font-bold text-right content-brand content-right lh-110 animate__animated animate__fadeInDown animate__faster"
+                >
+                  Doğum Günü<br />Çiçekleri
+                </h3>
+                <div
+                  class="b-btn-small animate__animated animate__fadeInUp animate__faster animate-delay-03s"
+                >
+                  Bugün 90 Dakikada Gönder
+                </div>
+              </div>
+            </a>
+            <img
+              class="figure animate__animated animate__fadeInLeft animate__faster animate-delay-02s"
+              src="images_eylul2/small-1.webp"
+              style="
+                margin-left: 0;
+                height: clamp(130px, calc(100vw * 205 / 1200), 205px);
+              "
+            />
+          </article>
+
+          <!-- Small 2 -->
+          <article
+            class="banner surface-brand-light animate__animated animate__fadeInUp animate__faster animate-delay-02s animate-disable-mobile p-24"
+          >
+            <a class="banner-link" href="/indirimli-cicekler">
+              <div class="content content-right">
+                <h3
+                  class="text-24 font-bold text-right content-brand content-right lh-110 animate__animated animate__fadeInDown animate__faster"
+                >
+                  Uygun Fiyatlı<br />Çiçekler
+                </h3>
+                <div
+                  class="b-btn-small animate__animated animate__fadeInUp animate__faster animate-delay-03s"
+                >
+                  Fiyatları İncele
+                </div>
+              </div>
+            </a>
+            <img
+              class="figure animate__animated animate__fadeInLeft animate__faster animate-delay-02s"
+              src="images_eylul2/small-2.webp"
+              style="
+                margin-left: 0;
+                height: clamp(130px, calc(100vw * 205 / 1200), 205px);
+              "
+            />
+          </article>
+
+          <!-- Small 3 -->
+          <article
+            class="banner surface-brand-light animate__animated animate__fadeInUp animate__faster animate-delay-03s animate-disable-mobile p-24"
+          >
+            <a class="banner-link" href="/lilyum-zambak">
+              <div class="content content-right">
+                <h3
+                  class="text-24 font-bold content-brand text-right content-right lh-110 animate__animated animate__fadeInDown animate__faster"
+                >
+                  Favori<br />
+                  Lilyumlar
+                </h3>
+                <div
+                  class="b-btn-small animate__animated animate__fadeInUp animate__faster animate-delay-03s"
+                >
+                  Bugün 90 Dakikada Gönder
+                </div>
+              </div>
+            </a>
+            <img
+              class="figure animate__animated animate__fadeInLeft animate__faster animate-delay-02s"
+              src="images_eylul2/small-3.webp"
+              style="
+                margin-left: 0;
+                height: clamp(130px, calc(100vw * 205 / 1200), 205px);
+              "
+            />
+          </article>
+        </div>
+      </section>
+    </main>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const heroLink = document.querySelector(".hero > .banner-link");
+        const mobileTabletQuery = window.matchMedia("(max-width: 1024px)");
+
+        const updateHeroLink = () => {
+          if (!heroLink) return;
+          const isMobileOrTablet = mobileTabletQuery.matches;
+          heroLink.href = isMobileOrTablet
+            ? "https://www.tazecicek.com/applink"
+            : "/cicek";
+          heroLink.setAttribute(
+            "aria-label",
+            isMobileOrTablet ? "Uygulamayı İndir" : "Alışverişe Başla",
+          );
+        };
+
+        updateHeroLink();
+        mobileTabletQuery.addEventListener("change", updateHeroLink);
+
+        const codeEls = document.querySelectorAll(".copy-code-btn");
+        if (codeEls.length === 0) return;
+
+        codeEls.forEach((codeEl) => {
+          // Value
+          const codeValue = codeEl.dataset.copyCode;
+
+          // Utulities
+          codeEl.style.whiteSpace = "nowrap";
+          codeEl.style.display = "flex";
+          codeEl.style.overflow = "visible";
+          codeEl.style.cursor = "pointer";
+
+          // Tooltip
+          const tooltip = document.createElement("div");
+          tooltip.textContent = "Kopyala";
+          tooltip.style.position = "absolute";
+          tooltip.style.left = "50%";
+          tooltip.style.top = "100%";
+          tooltip.style.transform = "translate(-50%, 6px)";
+          tooltip.style.padding = "8px 12px";
+          tooltip.style.fontSize = "12px";
+          tooltip.style.lineHeight = "1";
+          tooltip.style.backgroundColor = "#292929";
+          tooltip.style.color = "#ffffff";
+          tooltip.style.borderRadius = "8px";
+          tooltip.style.whiteSpace = "nowrap";
+          tooltip.style.boxShadow = "0 2px 4px rgba(0,0,0,.15)";
+          tooltip.style.opacity = "0";
+          tooltip.style.pointerEvents = "none";
+          tooltip.style.transition = "opacity .15s ease-out";
+          tooltip.style.zIndex = "10";
+
+          codeEl.style.position = "relative";
+          codeEl.appendChild(tooltip);
+
+          codeEl.addEventListener("mouseenter", () => {
+            tooltip.style.opacity = "1";
+            const discountWrap = codeEl.closest(".discount");
+            if (discountWrap) discountWrap.style.overflow = "visible";
+          });
+
+          codeEl.addEventListener("mouseleave", () => {
+            tooltip.style.opacity = "0";
+            const discountWrap = codeEl.closest(".discount");
+            if (discountWrap) discountWrap.style.overflow = "hidden";
+          });
+
+          codeEl.addEventListener("click", (event) => {
+            event.stopPropagation();
+            event.preventDefault();
+            // Copy to clipbord
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+              navigator.clipboard.writeText(codeValue).catch(() => {});
+            }
+
+            // Keep feedback in the tooltip so the SVG artwork never changes.
+            tooltip.textContent = "Kopyalandı";
+            tooltip.style.opacity = "1";
+
+            // Delay
+            setTimeout(() => {
+              tooltip.textContent = "Kopyala";
+              tooltip.style.opacity = "0";
+            }, 1500);
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
