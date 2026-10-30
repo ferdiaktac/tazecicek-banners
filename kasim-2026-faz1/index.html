@@ -116,6 +116,28 @@
         white-space: nowrap;
         font-size: clamp(20px, calc((52cqi - 8px) / var(--title-em)), 36px);
       }
+      /* Masaüstü: Öğretmenim İçin görseli Figma'daki gibi kartın altına oturur ve neredeyse kart boyunda */
+      @media (min-width: 1200px) {
+        .grid-1 .figure {
+          max-width: 61%;
+          height: 98% !important;
+          top: auto;
+          margin-bottom: 0 !important;
+          object-position: left bottom !important;
+        }
+        .card-title {
+          font-size: clamp(20px, calc((54cqi - 8px) / var(--title-em)), 36px);
+        }
+        /* Alttaki 3'lü banner başlıkları Figma'daki gibi (1480'de 28px) */
+        .small-banners h3 {
+          font-size: clamp(20px, calc(100vw * 28 / 1480), 28px) !important;
+        }
+      }
+      @media (max-width: 600px) {
+        .small-banners h3 {
+          font-size: 20px !important;
+        }
+      }
 
       .card-tag {
         border-radius: 12px 0;
@@ -610,7 +632,6 @@
                 <h3
                   class="text-24 font-bold text-right content-brand content-right lh-110 animate__animated animate__fadeInDown animate__faster"
                 >
-                  <span class="card-tag card-tag-small">24 Kasım</span>
                   Teşekkür<br />Buketleri
                 </h3>
                 <div
@@ -640,7 +661,6 @@
                 <h3
                   class="text-24 font-bold text-right content-brand content-right lh-110 animate__animated animate__fadeInDown animate__faster"
                 >
-                  <span class="card-tag card-tag-small">24 Kasım</span>
                   Uygun Fiyatlı<br />Teşekkürler
                 </h3>
                 <div
@@ -670,7 +690,6 @@
                 <h3
                   class="text-24 font-bold content-brand text-right content-right lh-110 animate__animated animate__fadeInDown animate__faster"
                 >
-                  <span class="card-tag card-tag-small">24 Kasım</span>
                   Saksı Çiçekleriyle<br />
                   Teşekkür
                 </h3>
