@@ -38,15 +38,6 @@
         height: clamp(100px, 13.65vw, 180px);
       }
 
-      /* Kasım: ince altın çerçeve */
-      .kasim-frame {
-        position: absolute;
-        inset: 10px;
-        border: 1px solid rgba(225, 170, 44, 0.55);
-        border-radius: 12px;
-        pointer-events: none;
-        z-index: 3;
-      }
 
       .kasim-title {
         font-size: clamp(18px, 2.3vw, 30px);
@@ -54,27 +45,28 @@
         letter-spacing: 0.12em;
         line-height: 1.2;
         margin: 0;
-        text-transform: uppercase;
       }
 
       .kasim-gold {
-        background: linear-gradient(180deg, #e6bf5a 0%, #b8841f 100%);
-        -webkit-background-clip: text;
-        background-clip: text;
-        color: transparent;
+        color: var(--cream);
       }
 
       .kasim-amount {
         white-space: nowrap;
       }
 
+      .kasim-offers {
+        margin-top: 26px;
+      }
+
       .coupon-pill {
         position: absolute;
-        top: -10px;
-        left: 12px;
+        bottom: calc(100% - 6px);
+        left: 50%;
+        transform: translateX(-50%);
         z-index: 5;
         background: var(--brand);
-        color: #f0ce7e;
+        color: var(--cream-light);
         font-size: 11px;
         font-weight: 800;
         letter-spacing: 0.04em;
@@ -87,14 +79,42 @@
       /* Dev "KASIM" kontur yazısı */
       .kasim-outline {
         position: absolute;
-        left: 46%;
-        bottom: clamp(80px, 8vw, 116px);
+        left: 50%;
+        bottom: clamp(104px, 10.5vw, 156px);
         width: 80%;
         height: auto;
         transform: translateX(-50%);
         z-index: 1;
         pointer-events: none;
         overflow: visible;
+      }
+
+      /* Sağ kart başlıkları tek satır: yazı, görselin yanındaki boşluğa göre küçülür */
+      .grid {
+        --title-em: 7.8; /* sayfadaki en uzun başlığın em cinsinden genişliği */
+      }
+      .grid-1,
+      .grid-2 {
+        container-type: inline-size;
+      }
+      .grid-1 .figure,
+      .grid-2 .figure {
+        max-width: 48%;
+        object-fit: contain;
+        object-position: left bottom;
+      }
+      /* Modelsiz ürün görseli: kartta dikeyde ortalı */
+      .figure-center-y {
+        top: 0;
+        bottom: 0;
+        margin-top: auto !important;
+        margin-bottom: auto !important;
+        object-position: left center !important;
+      }
+
+      .card-title {
+        white-space: nowrap;
+        font-size: clamp(20px, calc((52cqi - 8px) / var(--title-em)), 36px);
       }
 
       .card-tag {
@@ -154,20 +174,13 @@
           height: 20px !important;
         }
         .coupon-pill {
-          left: 50%;
-          transform: translateX(-50%);
           font-size: 10px;
+          bottom: calc(100% - 1px);
         }
         .kasim-outline {
           left: 50%;
           width: 94%;
-          bottom: 92px;
-        }
-        .offer-wrapper-mobile {
-          margin-top: 22px !important;
-        }
-        .coupon-pill {
-          top: -16px;
+          bottom: 112px;
         }
       }
 
@@ -178,6 +191,10 @@
       }
 
       @media (max-width: 400px) {
+        .mobile-label-size {
+          width: 84px !important;
+          height: 84px !important;
+        }
         .kasim-amount {
           font-size: 36px !important;
         }
@@ -191,6 +208,9 @@
       }
 
       @media (min-width: 769px) and (max-width: 1024px) {
+        .coupon-pill {
+          bottom: calc(100% - 1px);
+        }
         .offer-item-mobile-stack {
           flex-direction: column !important;
           gap: 0 !important;
@@ -200,12 +220,6 @@
         .grid-2 .figure {
           height: auto !important;
           width: 50%;
-        }
-        .offer-wrapper-mobile {
-          margin-top: 22px !important;
-        }
-        .coupon-pill {
-          top: -16px;
         }
       }
 
@@ -230,7 +244,6 @@
       <section class="grid">
         <!-- Hero -->
         <article class="hero surface-brand-light p-36">
-          <div class="kasim-frame"></div>
           <div
             class="animate__animated animate__fadeInUp animate__faster animate-delay-04s"
             style="
@@ -262,11 +275,11 @@
                 >
                   <span
                     class="text-20 font-semibold content-brand pb-8"
-                    style="letter-spacing: 0.36em; text-transform: uppercase"
-                    >Taze Çiçek'te</span
+                    style="letter-spacing: 0.36em"
+                    >TAZE ÇİÇEK'TE</span
                   >
                   <h2 class="kasim-title content-brand pb-16">
-                    Kasım <span class="kasim-gold">İndirimleri</span> Başlıyor
+                    KASIM <span class="kasim-gold">İNDİRİMLERİ</span> BAŞLIYOR
                   </h2>
                   <div
                     class="surface-brand pl-30 pr-30 pt-8 pb-8 radius-24 kasim-amount-box"
@@ -316,7 +329,7 @@
                       align-items: center;
                       flex-direction: row;
                     "
-                    class="mt-16 offer-wrapper-mobile"
+                    class="offer-wrapper-mobile kasim-offers"
                   >
                     <div class="discount-code-wrapper" style="position: relative">
                       <span class="coupon-pill">11.11'e Özel</span>
@@ -517,7 +530,7 @@
                   "
                   >Teşekkürün<br />En Taze Hali
                 </span>
-                Öğretmenim<br />İçin
+                <span class="card-title">Öğretmenim İçin</span>
               </h3>
               <div
                 class="b-btn-small animate__animated animate__fadeInUp animate__faster animate-delay-03s"
@@ -527,7 +540,7 @@
             </div>
           </a>
           <img
-            class="figure animate__animated animate__fadeInLeft animate__faster animate-delay-03s"
+            class="figure figure-center-y animate__animated animate__fadeInLeft animate__faster animate-delay-03s"
             src="images/grid-1.webp"
             alt="Ayıcıklı ayçiçeği aranjmanı"
             style="
@@ -565,7 +578,7 @@
                   "
                   >Öğretmene Kalıcı<br />Teşekkür
                 </span>
-                Orkideler
+                <span class="card-title">Orkideler</span>
               </h3>
               <div
                 class="b-btn-small animate__animated animate__fadeInUp animate__faster animate-delay-03s"
@@ -766,6 +779,48 @@
           });
         });
       });
+    </script>
+    <script>
+      // Dev kontur yazıyı kuponlarla buton arasındaki boşluğa sığdırır
+      (function () {
+        const hero = document.querySelector(".hero");
+        const outline = hero && hero.querySelector(".kasim-outline");
+        if (!outline) return;
+        const offers = hero.querySelector(".kasim-offers");
+        const btn = hero.querySelector(".b-btn");
+        const vb = outline.viewBox.baseVal;
+        const ratio = vb.width / vb.height;
+
+        // transform'lu animasyonlardan etkilenmeyen konum
+        const topIn = (el) => {
+          let y = 0;
+          while (el && el !== hero) {
+            y += el.offsetTop;
+            el = el.offsetParent;
+          }
+          return y;
+        };
+
+        const fit = () => {
+          outline.style.width = "";
+          outline.style.bottom = "";
+          const gap = 16;
+          const top = topIn(offers) + offers.offsetHeight + gap;
+          const bottom = topIn(btn) + btn.offsetHeight / 2; // butonun arkasına yarıya kadar inebilir
+          const avail = Math.max(bottom - top, 60);
+          const maxW = parseFloat(getComputedStyle(outline).width);
+          const w = Math.min(maxW, avail * ratio);
+          const h = w / ratio;
+          outline.style.width = w + "px";
+          outline.style.bottom =
+            hero.clientHeight - top - h - (avail - h) * 0.35 + "px";
+        };
+
+        fit();
+        window.addEventListener("resize", fit);
+        window.addEventListener("load", fit);
+        if (document.fonts) document.fonts.ready.then(fit);
+      })();
     </script>
   </body>
 </html>
