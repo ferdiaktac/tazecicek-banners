@@ -1,9 +1,3 @@
-<!--
-  Taze Çiçek – Kasım İndirimleri Faz 1 Hello Bar (tek responsive parça)
-  Mevcut sayfaya gömülmek için: html/head/body etiketi yok.
-  Tüm CSS sınıfları, id'ler, keyframe'ler ve JS fonksiyonları "tcf1hb" önekli,
-  böylece sayfadaki diğer unsurlarla çakışmaz.
--->
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link
@@ -20,7 +14,6 @@
     padding: 0;
   }
 
-  /* ── HELLO BAR ── */
   .tcf1hb {
     position: relative;
     width: 100%;
@@ -42,7 +35,6 @@
     height: 76px;
   }
 
-  /* ── Kelebek + Yazı ── */
   .tcf1hb-left {
     display: flex;
     align-items: center;
@@ -64,7 +56,6 @@
     height: 54px;
     display: block;
   }
-  /* Logodaki kelebek: arada bir iki kez kanat çırpar */
   .tcf1hb-wing {
     transform-box: view-box;
     transform-origin: 19.8px 16px;
@@ -112,7 +103,6 @@
   .tcf1hb-t1 { font-size: 25px; }
   .tcf1hb-t2 { font-size: 32px; }
 
-  /* ── İndirim rozeti ── */
   .tcf1hb-badge {
     background: #003ca6;
     border-radius: 20px;
@@ -145,9 +135,6 @@
   .tcf1hb-s1 { font-size: 16px; font-weight: 400; }
   .tcf1hb-s2 { font-size: 24px; font-weight: 800; }
 
-  /* ── Kupon karuseli ──
-     Görünür alan bar yüksekliğinde, overflow:hidden.
-     3 kart + 2 klon; etkin kartın ortası barın ortasına oturur. */
   .tcf1hb-vp {
     position: relative;
     height: 100px;
@@ -222,7 +209,6 @@
     line-height: 1.2;
   }
 
-  /* ── Tablet (600-899px): masaüstü düzeni, küçültülmüş ── */
   @media (max-width: 899px) {
     .tcf1hb, .tcf1hb-vp { height: 80px; }
     .tcf1hb-inner { height: 64px; gap: 12px; }
@@ -243,7 +229,6 @@
     .tcf1hb-amt { font-size: 18px; }
   }
 
-  /* ── Mobil (≤599px): kupon kartları iki satır ── */
   @media (max-width: 599px) {
     .tcf1hb-inner {
       justify-content: space-between;
@@ -275,7 +260,6 @@
     .tcf1hb-amt { font-size: 17px; line-height: 1; }
   }
 
-  /* ── 360-413px: orta boy ── */
   @media (max-width: 413px) {
     .tcf1hb, .tcf1hb-vp { height: 72px; }
     .tcf1hb-inner { height: 58px; padding: 0 6px; }
@@ -293,7 +277,6 @@
     .tcf1hb-amt { font-size: 15.5px; }
   }
 
-  /* ── 320-359px: en sıkı boy, hiçbir şey kesilmesin ── */
   @media (max-width: 359px) {
     .tcf1hb, .tcf1hb-vp { height: 65px; }
     .tcf1hb-inner { height: 52px; }
@@ -314,7 +297,6 @@
 
 <div class="tcf1hb" id="tcf1hb-bar">
   <div class="tcf1hb-inner">
-    <!-- Kelebek + Yazı -->
     <div class="tcf1hb-left">
       <div class="tcf1hb-icon" aria-hidden="true">
         <svg class="tcf1hb-svg" viewBox="0 0 31 32" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -328,7 +310,6 @@
       </div>
     </div>
 
-    <!-- İndirim rozeti -->
     <div class="tcf1hb-badge">
       <span class="tcf1hb-badge-main">400 TL</span>
       <div class="tcf1hb-badge-sub">
@@ -337,30 +318,24 @@
       </div>
     </div>
 
-    <!-- Kupon karuseli -->
     <div class="tcf1hb-vp" id="tcf1hb-vp">
       <div class="tcf1hb-track" id="tcf1hb-track">
-        <!-- [0] 400 TL klonu (geriye kesintisiz döngü) -->
         <div class="tcf1hb-card tcf1hb-is-inactive" aria-hidden="true">
           <span class="tcf1hb-cond">2.800 TL ve üzeri</span>
           <span class="tcf1hb-amt">400 TL</span>
         </div>
-        <!-- [1] 111 TL -->
         <div class="tcf1hb-card tcf1hb-is-active">
           <span class="tcf1hb-cond">1.111 TL ve üzeri</span>
           <span class="tcf1hb-amt">111 TL</span>
         </div>
-        <!-- [2] 240 TL -->
         <div class="tcf1hb-card tcf1hb-is-inactive">
           <span class="tcf1hb-cond">1.800 TL ve üzeri</span>
           <span class="tcf1hb-amt">240 TL</span>
         </div>
-        <!-- [3] 400 TL -->
         <div class="tcf1hb-card tcf1hb-is-inactive">
           <span class="tcf1hb-cond">2.800 TL ve üzeri</span>
           <span class="tcf1hb-amt">400 TL</span>
         </div>
-        <!-- [4] 111 TL klonu (ileri kesintisiz döngü) -->
         <div class="tcf1hb-card tcf1hb-is-inactive" aria-hidden="true">
           <span class="tcf1hb-cond">1.111 TL ve üzeri</span>
           <span class="tcf1hb-amt">111 TL</span>
@@ -384,7 +359,6 @@
     var tcf1hbCards = Array.prototype.slice.call(
       tcf1hbTrack.querySelectorAll(".tcf1hb-card")
     );
-    // [0]=klon(-1), [1..3]=gerçek, [4]=klon(3)
 
     var tcf1hbCurrent = 0;
     var tcf1hbCurrentIdx = 1;
@@ -394,7 +368,6 @@
     var tcf1hbStep = 0;
     var tcf1hbMid = 0;
 
-    // Kart yüksekliği, boşluk ve orta nokta (breakpoint değişince yeniden ölçülür)
     function tcf1hbMeasure() {
       var gap = parseFloat(getComputedStyle(tcf1hbTrack).rowGap) || 0;
       tcf1hbCardH = tcf1hbCards[1].offsetHeight;
@@ -428,7 +401,6 @@
       var nextReal = (tcf1hbCurrent + 1) % TCF1HB_REAL_COUNT;
 
       if (tcf1hbCurrent === TCF1HB_REAL_COUNT - 1) {
-        // Sonuncudan klona kay, sonra sessizce ilk gerçeğe atla
         tcf1hbMoveTo(4, true);
         tcf1hbApplyStates(4);
         setTimeout(function () {
