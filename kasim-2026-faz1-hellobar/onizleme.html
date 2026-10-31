@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Taze Çiçek – Kasım İndirimleri Faz 1 Hello Bar (önizleme)</title>
+    <style>
+      body { margin: 0; background: #ffffff; }
+    </style>
+  </head>
+  <body>
+    <!-- Sadece önizleme: hellobar.html parçasını sayfaya gömülmüş gibi yükler -->
+    <div id="tcf1hb-onizleme"></div>
+    <script>
+      fetch("hellobar.html")
+        .then(function (r) { return r.text(); })
+        .then(function (html) {
+          var host = document.getElementById("tcf1hb-onizleme");
+          host.innerHTML = html;
+          host.querySelectorAll("script").forEach(function (old) {
+            var s = document.createElement("script");
+            s.textContent = old.textContent;
+            old.replaceWith(s);
+          });
+        });
+    </script>
+  </body>
+</html>
